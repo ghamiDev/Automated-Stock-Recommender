@@ -138,8 +138,8 @@ else:
 
             # Tambahkan ke tabel utama
             rows.append({
-                "No": i,  # ✅ Nomor urut
-                "Ticker": f"{ticker}\n - {company_name}",  # ✅ Nama perusahaan di bawah kode saham
+                "No": i, 
+                "Ticker": f"{ticker}\n - {company_name}",
                 "Price": round(float(last_price), 2) if pd.notna(last_price) else None,
                 "Change%": round(float(change_pct), 2) if change_pct is not None else None,
                 "Signal": res_pack["results"][ticker]["technical_score"]["signal"],
