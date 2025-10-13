@@ -6,4 +6,4 @@ plotly>=5.22.0
 typing-extensions
 beautifulsoup4
 lxml
-
+openpyxl
