@@ -4,8 +4,11 @@ warnings.filterwarnings("ignore")
 import yfinance as yf
 import pandas as pd
 import numpy as np
-from datetime import datetime, timedelta
 from typing import List, Dict, Any
+
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import List, Dict, Any
+import time
 
 # Helper
 def safe_div(a, b, eps=1e-9):
@@ -20,12 +23,7 @@ class AutomatedStockAnalyzer:
     # Data fetching
     # -------------------------
     def get_stock_data(self, ticker: str, period: str = "1mo", interval: str = "60m") -> Dict[str, Any]:
-        """
-        Fetch historical price data and (if available) fundamentals via yfinance.
-        period: e.g. "1mo", "3mo", "6mo", "1y"
-        interval: e.g. "1m","5m","60m","1d" - yfinance supports certain combos
-        Returns dict: {'hist': DataFrame, 'info': dict, 'financials': df...}
-        """
+       
         key = f"{ticker}_{period}_{interval}"
         if key in self.cache:
             return self.cache[key]
@@ -207,14 +205,7 @@ class AutomatedStockAnalyzer:
     # Macro context analysis
     # -------------------------
     def analyze_macro_context(self) -> Dict[str, Any]:
-        """
-        Simple macro context using yfinance tickers:
-        - IHSG / JKSE: ^JKSE  (May be limited in yfinance; fallback)
-        - USDIDR: USDIDR=X
-        - Gold: GC=F
-        - Oil: CL=F
-        Returns dict with quick signals and values.
-        """
+  
         macros = {}
         # symbol list
         symbols = {
@@ -252,12 +243,7 @@ class AutomatedStockAnalyzer:
     # Scoring / Recommender
     # -------------------------
     def score_stock(self, df: pd.DataFrame, fm: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Compute composite score:
-        Score = (RSI_score*0.2) + (MACD_score*0.3) + (MA_trend*0.3) + (Volume*0.2)
-        Return details with component scores.
-        Component scales 0-100.
-        """
+      
         if df is None or df.empty:
             return {"score": 0, "components": {}, "signal": "NO_DATA"}
 
@@ -314,10 +300,7 @@ class AutomatedStockAnalyzer:
     # 3-day decision planner
     # -------------------------
     def generate_3day_decision(self, df: pd.DataFrame, fm: Dict[str, Any], capital: float = 100000000, risk_percent: float = 1.0) -> Dict[str, Any]:
-        """
-        Using ATR-based stop & R=2 target, compute position sizing for 3-day horizon.
-        Returns a plan dict.
-        """
+       
         if df is None or df.empty:
             return {"action": "NO_DATA"}
 
@@ -391,14 +374,8 @@ class AutomatedStockAnalyzer:
     # -------------------------
     # Batch runner to get top N recommendations
     # -------------------------
-    def generate_recommendations(self, tickers: List[str], period: str = "1mo", interval: str = "60m", top_n: int = 10, capital: float = 100000000, risk_percent: float = 1.0) -> Dict[str, Any]:
-        """
-        Analyze provided tickers and return top_n recommended stocks sorted by score.
-        Returns dict with:
-         - 'results': {ticker: analysis}
-         - 'ranked': list of (ticker, score)
-         - 'macro': macro_context
-        """
+    def generate_recommendations(self, tickers: List[str], period: str, interval: str, top_n: int, risk_percent: float, capital: float = 1000000) -> Dict[str, Any]:
+
         results = {}
         ranked = []
         for t in tickers:
@@ -415,7 +392,6 @@ class AutomatedStockAnalyzer:
         top = ranked_sorted[:top_n]
         macro = self.analyze_macro_context()
         return {"results": results, "ranked": ranked_sorted, "top": top, "macro": macro}
-
     # -------------------------
     # small utility to clear cache
     # -------------------------

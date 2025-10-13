@@ -4,6 +4,7 @@ import pandas as pd
 from analyzer_full import AutomatedStockAnalyzer
 from datetime import datetime
 import plotly.graph_objects as go
+from idx_listed import get_idx_tickers
 
 # ---------------------------
 # Page config
@@ -31,10 +32,19 @@ st.markdown(
 st.title("📈 Automated Stock Recommender")
 st.markdown("Real-time-ish recommendation engine (yfinance). Dashboard shows top recommended stocks and expandable detail per stock.")
 
+
 # Sidebar controls
 with st.sidebar:
     st.header("Controls")
-    default_list = "BBCA.JK, BBRI.JK, BMRI.JK, TLKM.JK, ASII.JK, UNVR.JK, ICBP.JK, INDF.JK, TPIA.JK, EXCL.JK,ADRO.JK, ANTM.JK, BRPT.JK, ITMG.JK, PGAS.JK,AKRA.JK, SMGR.JK, GGRM.JK, JSMR.JK, KLBF.JK,MNCN.JK, WIKA.JK, WSKT.JK, CPIN.JK, ULTJ.JK,BMTR.JK, BRIS.JK, BTPS.JK, INCO.JK, MDKA.JK,SIDO.JK, TINS.JK, TOWR.JK, BUKA.JK, EMTK.JK,ARTO.JK, BYAN.JK, HRUM.JK, JPFA.JK, MYOR.JK"
+
+    # ambil otomatis dari IDX (cached 1 hari)
+    try:
+        tickers_list = get_idx_tickers()
+        default_list = ", ".join(tickers_list)
+    except:
+        st.warning("⚠️ Gagal memuat daftar IDX otomatis, fallback ke default list.")
+        default_list = "BBCA.JK, BBRI.JK, BMRI.JK, TLKM.JK, ASII.JK, UNVR.JK, ICBP.JK, INDF.JK, TPIA.JK, EXCL.JK,ADRO.JK, ANTM.JK, BRPT.JK, ITMG.JK, PGAS.JK,AKRA.JK, SMGR.JK, GGRM.JK, JSMR.JK, KLBF.JK,MNCN.JK, WIKA.JK, WSKT.JK, CPIN.JK, ULTJ.JK,BMTR.JK, BRIS.JK, BTPS.JK, INCO.JK, MDKA.JK,SIDO.JK, TINS.JK, TOWR.JK, BUKA.JK, EMTK.JK,ARTO.JK, BYAN.JK, HRUM.JK, JPFA.JK, MYOR.JK"
+
     # tickers_input = st.text_area("Tickers (comma separated)", value=default_list, height=140)
     tickers = [t.strip().upper() for t in default_list.split(",") if t.strip()]
     period_choice = st.selectbox("Period for analysis", ["1mo", "3mo", "6mo", "1y"], index=0)
@@ -52,6 +62,36 @@ with st.sidebar:
 if "watchlist" not in st.session_state:
     st.session_state["watchlist"] = []
 
+# Mode pilihan
+st.markdown("### ⚙️ Pilih Mode Analisis")
+analysis_mode = st.radio(
+    "Mode analisis:",
+    ["All Analysis (Full Auto)", "Single Analysis (Manual)"],
+    index=0,
+    horizontal=True
+)
+
+# --- Jika mode SINGLE, tampilkan dropdown saham ---
+selected_tickers = []
+if analysis_mode == "Single Analysis (Manual)":
+    try:
+        from idx_listed import get_idx_tickers
+        idx_tickers = get_idx_tickers()
+    except Exception:
+        idx_tickers = tickers  # fallback
+
+    st.markdown("### 🧩 Pilih Satu atau Beberapa Saham untuk Analisis Manual")
+    selected_tickers = st.multiselect(
+        "Centang saham yang ingin dianalisis:",
+        options=idx_tickers,
+        default=["BBCA.JK"],
+        help="Kamu bisa memilih lebih dari satu saham sekaligus"
+    )
+
+    st.markdown(
+        "<small style='color:gray'>Mode ini menganalisis satu atau beberapa saham dengan tampilan grafik dan indikator lengkap (teknikal, fundamental, dan makroekonomi).</small>",
+        unsafe_allow_html=True,
+    )
 analyzer = AutomatedStockAnalyzer()
 
 # Utilities
@@ -79,21 +119,53 @@ def style_action(val):
 # ---------------------------
 # Generate recommendations (run)
 # ---------------------------
-run_button = st.button("🚀 Generate Recommendations")
-if run_button:
-    with st.spinner("Analysing... This may take a while for many tickers."):
-        res_pack = analyzer.generate_recommendations(
-            tickers=tickers,
-            period=period_choice,
-            interval=interval_choice,
-            top_n=top_n,
-            # capital=capital,
-            risk_percent=risk_percent
-        )
-        # keep in session for refresh / watchlist
-        st.session_state["last_results"] = res_pack
-        st.session_state["last_run"] = datetime.now().isoformat()
-        st.rerun()
+# run_button = st.button("🚀 Generate Recommendations")
+# if run_button:
+#     with st.spinner("Analysing... This may take a while for many tickers."):
+#         res_pack = analyzer.generate_recommendations(
+#             tickers=tickers,
+#             period=period_choice,
+#             interval=interval_choice,
+#             top_n=top_n,
+#             # capital=capital,
+#             risk_percent=risk_percent
+#         )
+#         # keep in session for refresh / watchlist
+#         st.session_state["last_results"] = res_pack
+#         st.session_state["last_run"] = datetime.now().isoformat()
+#         st.rerun()
+
+if analysis_mode == "All Analysis (Full Auto)":
+    run_button = st.button("🚀 Generate Recommendations")
+    if run_button:
+        with st.spinner("Analysing... This may take a while for many tickers."):
+            res_pack = analyzer.generate_recommendations(
+                tickers=tickers,
+                period=period_choice,
+                interval=interval_choice,
+                top_n=top_n,
+                # capital=capital,
+                risk_percent=risk_percent
+            )
+            st.session_state["last_results"] = res_pack
+            st.session_state["last_run"] = datetime.now().isoformat()
+            st.rerun()
+
+elif analysis_mode == "Single Analysis (Manual)":
+    run_button = st.button("🔍 Analyze Selected Stock")
+    if run_button and selected_tickers:
+        with st.spinner(f"Analysing {len(selected_tickers)} stock(s)..."):
+            res_pack = analyzer.generate_recommendations(
+                tickers=selected_tickers,
+                period=period_choice,
+                interval=interval_choice,
+                top_n=top_n,
+                # capital=capital,
+                risk_percent=risk_percent
+            )
+            st.session_state["last_results"] = res_pack
+            st.session_state["last_run"] = datetime.now().isoformat()
+            st.rerun()
 
 # auto refresh simple (non-blocking)
 if auto_refresh and "last_results" in st.session_state:
@@ -112,8 +184,9 @@ if res_pack is None:
 # ---------------------------
 # Top recommendations table
 # ---------------------------
+ranked = res_pack.get("top", []) 
 st.subheader("Top Recommendations Today")
-ranked = res_pack.get("top", [])  # list of (ticker, score)
+    # list of (ticker, score)
 if not ranked:
     st.warning("Tidak ada rekomendasi teratas (coba run ulang atau ganti tickers).")
 else:
