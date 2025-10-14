@@ -10,6 +10,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any
 import time
 
+import concurrent.futures
+import math
+import streamlit as st
+import random
+
 # Helper
 def safe_div(a, b, eps=1e-9):
     return a / (b + eps)
@@ -374,24 +379,163 @@ class AutomatedStockAnalyzer:
     # -------------------------
     # Batch runner to get top N recommendations
     # -------------------------
-    def generate_recommendations(self, tickers: List[str], period: str, interval: str, top_n: int, risk_percent: float, capital: float = 1000000) -> Dict[str, Any]:
+    # def generate_recommendations(self, tickers: List[str], period: str, interval: str, top_n: int, risk_percent: float, capital: float = 1000000) -> Dict[str, Any]:
+
+    #     results = {}
+    #     ranked = []
+    #     for t in tickers:
+    #         try:
+    #             analysis = self.analyze_one(t, period=period, interval=interval, capital=capital, risk_percent=risk_percent)
+    #             if analysis:
+    #                 score = analysis["technical_score"]["score"]
+    #                 results[t] = analysis
+    #                 ranked.append((t, score))
+    #         except Exception as e:
+    #             print(f"[generate_recommendations] {t} error: {e}")
+
+    #     ranked_sorted = sorted(ranked, key=lambda x: x[1], reverse=True)
+    #     top = ranked_sorted[:top_n]
+    #     macro = self.analyze_macro_context()
+    #     return {"results": results, "ranked": ranked_sorted, "top": top, "macro": macro}
+    def generate_recommendations(
+    self,
+    tickers: List[str],
+    period: str,
+    interval: str,
+    top_n: int,
+    risk_percent: float,
+    capital: float = 1000000,
+) -> Dict[str, Any]:
 
         results = {}
         ranked = []
-        for t in tickers:
-            try:
-                analysis = self.analyze_one(t, period=period, interval=interval, capital=capital, risk_percent=risk_percent)
-                if analysis:
-                    score = analysis["technical_score"]["score"]
-                    results[t] = analysis
-                    ranked.append((t, score))
-            except Exception as e:
-                print(f"[generate_recommendations] {t} error: {e}")
 
-        ranked_sorted = sorted(ranked, key=lambda x: x[1], reverse=True)
+        # 🧠 1️⃣ Bagi tickers jadi batch kecil agar aman dari timeout/rate-limit
+        BATCH_SIZE = 100
+        ticker_batches = [tickers[i:i + BATCH_SIZE] for i in range(0, len(tickers), BATCH_SIZE)]
+        total_batches = len(ticker_batches)
+
+        # 🚀 Progress bar Streamlit
+        progress_bar = st.progress(0, text="⏳ Starting stock analysis...")
+        progress_text = st.empty()
+
+        start_time = time.time()
+
+        def process_batch(batch_index, batch):
+            max_retries = 3
+            retry_delay = 5  # detik
+            batch_results = []
+
+            for attempt in range(max_retries):
+                try:
+                    # ⏬ Ambil data seluruh batch sekaligus
+                    data = yf.download(
+                        batch,
+                        period=period,
+                        interval=interval,
+                        progress=False,
+                        group_by="ticker",
+                        threads=True,
+                    )
+
+                    # Jika rate-limited (kosong semua)
+                    if data.empty or (isinstance(data.columns, pd.MultiIndex) and len(data.columns.levels[0]) == 0):
+                        raise Exception("Empty data (possibly rate-limited)")
+
+                    for t in batch:
+                        try:
+                            df = (
+                                data[t]
+                                if isinstance(data.columns, pd.MultiIndex) and t in data.columns.levels[0]
+                                else data
+                            )
+                            if df is None or df.empty:
+                                continue
+
+                            analysis = self.analyze_one(
+                                t,
+                                period=period,
+                                interval=interval,
+                                capital=capital,
+                                risk_percent=risk_percent,
+                            )
+                            if analysis:
+                                score = analysis["technical_score"]["score"]
+                                results[t] = analysis
+                                batch_results.append((t, score))
+
+                            # random delay kecil antar ticker agar tidak ban
+                            time.sleep(random.uniform(0.2, 0.6))
+
+                        except Exception as e:
+                            print(f"[generate_recommendations][batch {batch_index}] {t} error: {e}")
+                    return batch_results
+
+                except Exception as e:
+                    print(f"⚠️ Batch {batch_index} failed (attempt {attempt + 1}/{max_retries}): {e}")
+                    if attempt < max_retries - 1:
+                        sleep_time = retry_delay * (attempt + 1)
+                        print(f"🔁 Retrying batch {batch_index} after {sleep_time}s...")
+                        time.sleep(sleep_time)
+                    else:
+                        print(f"❌ Batch {batch_index} skipped after {max_retries} failed attempts.")
+                        return []
+
+        # 🧵 2️⃣ Jalankan batch secara paralel aman
+        all_results = []
+        max_workers = min(8, math.ceil(total_batches / 2))
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {
+                executor.submit(process_batch, i + 1, batch): i
+                for i, batch in enumerate(ticker_batches)
+            }
+
+            for completed, future in enumerate(concurrent.futures.as_completed(futures), 1):
+                try:
+                    batch_index = futures[future]
+                    batch_res = future.result()
+                    all_results.extend(batch_res)
+
+                    # Hitung waktu & ETA
+                    elapsed = time.time() - start_time
+                    avg_time = elapsed / completed
+                    remaining_batches = total_batches - completed
+                    eta_seconds = remaining_batches * avg_time
+                    eta_min = int(eta_seconds // 60)
+                    eta_sec = int(eta_seconds % 60)
+
+                    # Update progress
+                    percent = int((completed / total_batches) * 100)
+                    progress_bar.progress(percent, text=f"🚀 Processing batch {completed}/{total_batches} ({percent}%)")
+                    progress_text.text(
+                        f"✅ Batch {completed}/{total_batches} selesai ({len(batch_res)} saham) — ETA: {eta_min}m {eta_sec}s"
+                    )
+
+                except Exception as e:
+                    print(f"⚠️ Error di batch {completed}: {e}")
+
+                # jeda antar batch untuk menghindari rate-limit
+                time.sleep(1.5)
+
+        progress_bar.progress(100, text="✅ All analysis complete!")
+        progress_text.text("🎉 Semua analisis selesai tanpa error.")
+
+        # 🏁 3️⃣ Urutkan hasil
+        ranked_sorted = sorted(all_results, key=lambda x: x[1], reverse=True)
         top = ranked_sorted[:top_n]
+
+        # 🌏 4️⃣ Analisis makro hanya sekali
         macro = self.analyze_macro_context()
-        return {"results": results, "ranked": ranked_sorted, "top": top, "macro": macro}
+
+        return {
+            "results": results,
+            "ranked": ranked_sorted,
+            "top": top,
+            "macro": macro,
+        }
+
+
     # -------------------------
     # small utility to clear cache
     # -------------------------

@@ -13,18 +13,58 @@ st.set_page_config(page_title="Automated Stock Recommender", layout="wide", page
 
 # CSS dark theme minor adjustments
 st.markdown(
-    """
-    <style>
-    .stApp { background-color: #0b0f14; color: #e6eef6; }
-    .css-1d391kg { background-color: #0b0f14; }
-    .stSidebar { background-color: #0f1418; }
-    .stButton>button { background-color: #1f2933; color: #e6eef6; }
-    .stDownloadButton>button { background-color: #2b6cb0; color: #fff; }
-    thead th { background-color: #111827 !important; color: #e6eef6 !important; }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+        """
+        <style>
+        /* --- Global Dark Theme --- */
+        .stApp { background-color: #0b0f14; color: #e6eef6; }
+        .css-1d391kg { background-color: #0b0f14; }
+        .stSidebar { background-color: #0f1418; }
+
+        /* --- Buttons --- */
+        .stButton>button {
+            background-color: #1f2933;
+            color: #e6eef6;
+            border: 1px solid #f97316;  /* orange border */
+            border-radius: 6px;
+        }
+        .stButton>button:hover {
+            border-color: #fb923c;
+            background-color: #2d3748;
+        }
+
+        /* --- Download button --- */
+        .stDownloadButton>button {
+            background-color: #2b6cb0;
+            color: #fff;
+            border-radius: 6px;
+            border: 1px solid #f97316;
+        }
+
+        /* --- Inputs: text, select, number, text_area, slider --- */
+        div[data-baseweb="input"] > div,
+        div[data-baseweb="select"] > div,
+        textarea, input[type="text"], input[type="number"] {
+            border: 1px solid #f97316 !important; /* orange border */
+            border-radius: 6px !important;
+            background-color: #111827 !important;
+            color: #e6eef6 !important;
+        }
+
+        /* --- Slider --- */
+        .stSlider > div > div > div[data-baseweb="slider"] {
+            background-color: #f97316 !important;
+        }
+
+        /* --- Header table --- */
+        thead th {
+            background-color: #111827 !important;
+            color: #e6eef6 !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 # ---------------------------
 # App header + controls
@@ -35,7 +75,8 @@ st.markdown("Real-time-ish recommendation engine (yfinance). Dashboard shows top
 
 # Sidebar controls
 with st.sidebar:
-    st.header("Controls")
+    st.markdown("## ⚙️ Controls")
+    st.caption("Atur parameter analisis di bawah ini:")
 
     # ambil otomatis dari IDX (cached 1 hari)
     try:
@@ -46,17 +87,32 @@ with st.sidebar:
         default_list = "BBCA.JK, BBRI.JK, BMRI.JK, TLKM.JK, ASII.JK, UNVR.JK, ICBP.JK, INDF.JK, TPIA.JK, EXCL.JK,ADRO.JK, ANTM.JK, BRPT.JK, ITMG.JK, PGAS.JK,AKRA.JK, SMGR.JK, GGRM.JK, JSMR.JK, KLBF.JK,MNCN.JK, WIKA.JK, WSKT.JK, CPIN.JK, ULTJ.JK,BMTR.JK, BRIS.JK, BTPS.JK, INCO.JK, MDKA.JK,SIDO.JK, TINS.JK, TOWR.JK, BUKA.JK, EMTK.JK,ARTO.JK, BYAN.JK, HRUM.JK, JPFA.JK, MYOR.JK"
 
     # tickers_input = st.text_area("Tickers (comma separated)", value=default_list, height=140)
+    # st.markdown("### 🏦 Tickers List")
+    # default_list = "BBCA.JK, BBRI.JK, BMRI.JK, TLKM.JK, ASII.JK, UNVR.JK, ICBP.JK, INDF.JK, TPIA.JK, EXCL.JK, ADRO.JK, ANTM.JK, BRPT.JK, ITMG.JK, PGAS.JK, AKRA.JK, SMGR.JK, GGRM.JK, JSMR.JK, KLBF.JK, MNCN.JK, WIKA.JK, WSKT.JK, CPIN.JK, ULTJ.JK, BMTR.JK, BRIS.JK, BTPS.JK, INCO.JK, MDKA.JK, SIDO.JK, TINS.JK, TOWR.JK, BUKA.JK, EMTK.JK, ARTO.JK, BYAN.JK, HRUM.JK, JPFA.JK, MYOR.JK"
+    # tickers_input = st.text_area("📋 Input tickers (comma separated)", value=default_list, height=140)
     tickers = [t.strip().upper() for t in default_list.split(",") if t.strip()]
-    period_choice = st.selectbox("Period for analysis", ["1mo", "3mo", "6mo", "1y"], index=0)
-    interval_choice = st.selectbox("Interval (yfinance)", ["60m", "90m", "1d"], index=0)
-    top_n = st.number_input("Top N recommendations", min_value=1, max_value=50, value=5, step=1)
-    # capital = st.number_input("Capital (currency)", value=100000000, step=1000000)
-    risk_percent = st.slider("Risk per trade (%)", min_value=0.1, max_value=5.0, value=1.0, step=0.1)
-    auto_refresh = st.checkbox("Auto refresh (simple)", value=False)
-    refresh_interval = st.number_input("Auto refresh interval (seconds)", min_value=30, max_value=3600, value=600, step=10)
+
+    # ⏳ Periode & Interval
+    st.markdown("### ⏱️ Time Settings")
+    period_choice = st.selectbox("🗓️ Period for analysis", ["1mo", "3mo", "6mo", "1y"], index=0)
+    interval_choice = st.selectbox("⏰ Interval (yfinance)", ["60m", "90m", "1d"], index=0)
+
+    # 🧠 Analisis
+    st.markdown("### 📊 Analysis Settings")
+    top_n = st.number_input("🏅 Top N recommendations", min_value=1, max_value=50, value=5, step=1)
+    capital = st.number_input("💰 Capital (currency)", value=100000000, step=1000000)
+    risk_percent = st.slider("⚠️ Risk per trade (%)", min_value=0.1, max_value=5.0, value=1.0, step=0.1)
+
+    # 🔁 Auto refresh
+    st.markdown("### 🔄 Auto Refresh")
+    auto_refresh = st.checkbox("Enable auto refresh", value=False)
+    refresh_interval = st.number_input("⏳ Interval (seconds)", min_value=30, max_value=3600, value=600, step=10)
+
+    # Tombol manual refresh
     st.markdown("---")
-    if st.button("🔄 Refresh now"):
+    if st.button("🔃 Refresh now"):
         st.rerun()
+
 
 # session state for watchlist
 if "watchlist" not in st.session_state:
@@ -248,9 +304,35 @@ for ticker, score in ranked:
     
     if not analysis:
         continue
+    
+    signal_text = analysis["technical_score"]["signal"]
+    signal_upper = signal_text.upper()
+    trend_score = analysis["technical_score"]["components"].get("ma_trend_score", 50)
+
+    if "BUY" in signal_upper:
+        signal_emoji = "🟢"
+    elif "SELL" in signal_upper:
+        signal_emoji = "🔴"
+    elif "HOLD" in signal_upper or "ACCUMULATE" in signal_upper:
+        signal_emoji = "🟡"
+    else:
+        signal_emoji = "⚪"
+
+    if trend_score > 60:
+        emoji_trend = "⬆️"
+        trend_text = "Uptrend"
+    elif trend_score < 40:
+        emoji_trend = "⬇️"
+        trend_text = "Downtrend"
+    else:
+        emoji_trend = "↔️"
+        trend_text = "Sideway"
 
     # accordion-like
-    with st.expander(f"{ticker} ({company_name}) — Score: {analysis['technical_score']['score']} — Signal: {analysis['technical_score']['signal']}"):
+    expander_label = f"{signal_emoji} {ticker} ({company_name}) — Score: {analysis['technical_score']['score']} — Signal: {signal_text} {emoji_trend} {trend_text}"
+
+    with st.expander(expander_label, expanded=False):
+        
         cols = st.columns([2, 2, 1])
         # left: mini chart
         with cols[0]:
