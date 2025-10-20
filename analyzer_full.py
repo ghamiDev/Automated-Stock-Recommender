@@ -398,14 +398,14 @@ class AutomatedStockAnalyzer:
     #     macro = self.analyze_macro_context()
     #     return {"results": results, "ranked": ranked_sorted, "top": top, "macro": macro}
     def generate_recommendations(
-    self,
-    tickers: List[str],
-    period: str,
-    interval: str,
-    top_n: int,
-    risk_percent: float,
-    capital: float = 1000000,
-) -> Dict[str, Any]:
+        self,
+        tickers: List[str],
+        period: str,
+        interval: str,
+        top_n: int,
+        risk_percent: float,
+        capital: float = 1000000,
+    ) -> Dict[str, Any]:
 
         results = {}
         ranked = []
@@ -534,6 +534,80 @@ class AutomatedStockAnalyzer:
             "top": top,
             "macro": macro,
         }
+
+    # -------------------------
+    # Support–Resistance detection
+    # -------------------------
+    def detect_support_resistance(self, df, window=10, sensitivity=0.02):
+        """
+        Deteksi level support dan resistance sederhana dari data OHLC.
+        """
+        df = df.copy()
+        df['min'] = df['Low'].rolling(window=window, center=True).min()
+        df['max'] = df['High'].rolling(window=window, center=True).max()
+
+        # Ambil level-level unik (hindari duplikasi)
+        supports = sorted(list(set([round(x, -1) for x in df['min'].dropna()])))
+        resistances = sorted(list(set([round(x, -1) for x in df['max'].dropna()])))
+
+        # Hanya ambil level relevan dekat harga terakhir
+        last_price = df['Close'].iloc[-1]
+        nearby_supports = [s for s in supports if s < last_price * (1 + sensitivity)]
+        nearby_resistances = [r for r in resistances if r > last_price * (1 - sensitivity)]
+
+        nearest_support = max(nearby_supports, default=None)
+        nearest_resistance = min(nearby_resistances, default=None)
+
+        return nearest_support, nearest_resistance
+
+    # -------------------------
+    # Timing advice generator
+    # -------------------------
+    def timing_signal(self, last_price, nearest_support, nearest_resistance, main_signal):
+        """
+        Memberikan saran timing beli/jual berdasarkan posisi harga terhadap S/R.
+        """
+        if nearest_support and last_price <= nearest_support * 1.01 and main_signal in ['BUY', 'HOLD']:
+            return f"🟢 Potensi Entry di sekitar support {nearest_support}"
+        elif nearest_resistance and last_price >= nearest_resistance * 0.99 and main_signal in ['SELL', 'HOLD']:
+            return f"🔴 Potensi Take Profit di sekitar resistance {nearest_resistance}"
+        elif nearest_resistance and last_price > nearest_resistance:
+            return f"🚀 Breakout di atas {nearest_resistance}"
+        elif nearest_support and last_price < nearest_support:
+            return f"⚠️ Breakdown di bawah {nearest_support}"
+        else:
+            return "⏸ Tidak ada sinyal timing signifikan saat ini."
+
+    # -------------------------
+    # Single stock full analysis pipeline
+    # -------------------------
+    def analyze_one(self, ticker: str, period: str = "1mo", interval: str = "60m", capital: float = 100000000, risk_percent: float = 1.0) -> Dict[str, Any]:
+        stock_data = self.get_stock_data(ticker, period=period, interval=interval)
+        if not stock_data:
+            return None
+
+        df = stock_data["hist"].copy()
+        df = self.calculate_technical_indicators(df)
+        df = self.calculate_deep_technical_indicators(df)
+        fm = self.calculate_fundamental_metrics(stock_data)
+        score_pack = self.score_stock(df, fm)
+        plan = self.generate_3day_decision(df, fm, capital=capital, risk_percent=risk_percent)
+
+        # 🔹 Tambahan Support–Resistance Analysis
+        support, resistance = self.detect_support_resistance(df)
+        timing = self.timing_signal(df['Close'].iloc[-1], support, resistance, score_pack["signal"])
+
+        out = {
+            "ticker": ticker,
+            "price_data": df,
+            "fundamental_metrics": fm,
+            "technical_score": score_pack,
+            "3day_plan": plan,
+            "support": support,
+            "resistance": resistance,
+            "timing_advice": timing,
+        }
+        return out
 
 
     # -------------------------
