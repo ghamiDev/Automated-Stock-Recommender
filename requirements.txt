@@ -7,3 +7,5 @@ typing-extensions
 beautifulsoup4
 lxml
 openpyxl
+requests>=2.32.0
+tenacity>=8.3.0
