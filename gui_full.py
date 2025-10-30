@@ -1,3 +1,4 @@
+import os
 import yfinance as yf
 import streamlit as st
 import pandas as pd
@@ -6,6 +7,11 @@ from datetime import datetime
 import plotly.graph_objects as go
 from idx_listed import get_idx_tickers
 from pathlib import Path
+from dotenv import load_dotenv
+import numpy as np
+
+load_dotenv()
+DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK ")
 
 # ---------------------------
 # Page config
@@ -92,18 +98,14 @@ def read_sector_tickers(excel_path: Path):
 
 
 # ---------------------------
-# App header
-# ---------------------------
-st.title("📈 Automated Stock Recommender")
-st.markdown("Real-time-ish recommendation engine (yfinance). Dashboard shows top recommended stocks and expandable detail per stock.")
-
-
-# ---------------------------
 # Sidebar Controls
 # ---------------------------
 with st.sidebar:
     st.header("🛠️ Controls")
     st.markdown("Configure your analysis below:")
+
+    # ===== App page selector =====
+    app_page = st.selectbox("Menu", ["Dashboard","Simulator Investasi"], index=0)
 
     # === Pilihan sektor saham ===
     st.markdown("### 📊 Pilih Sektor Saham")
@@ -169,6 +171,131 @@ with st.sidebar:
 if "watchlist" not in st.session_state:
     st.session_state["watchlist"] = []
 
+analyzer = AutomatedStockAnalyzer()
+analyzer.set_watchlist(st.session_state["watchlist"])
+analyzer.set_discord_notifier(DISCORD_WEBHOOK, st.session_state.get("watchlist", []))
+
+# --- Simulator Investasi page
+try:
+    current_app_page = app_page
+except NameError:
+    current_app_page = "Dashboard"
+
+if current_app_page == "Simulator Investasi":
+    st.title("💼 Simulator Investasi Jangka Panjang")
+    st.markdown("Gunakan simulator ini untuk memproyeksikan pertumbuhan investasi dengan analisis Monte Carlo, multi-analis, dan sensitivitas.")
+
+    col1, col2, col3 = st.columns([1.2, 1, 1])
+    with col1:
+        sim_ticker = st.text_input("Ticker (misal: BBCA.JK)", value="BBCA.JK")
+        sim_years = st.number_input("Horizon (tahun)", 1, 50, 10, 1)
+        sim_initial = st.number_input("Modal Awal (Rp)", min_value=0.0, value=10_000_000.0, step=100_000.0, format="%.2f")
+    with col2:
+        sim_contrib = st.number_input("Kontribusi Periodik (Rp)", min_value=0.0, value=0.0, step=100_000.0, format="%.2f")
+        sim_freq_choice = st.selectbox("Frekuensi Kontribusi", ["Bulanan (12)", "Mingguan (52)", "Tahunan (1)"], index=0)
+        sim_freq = 12 if "Bulanan" in sim_freq_choice else (52 if "Mingguan" in sim_freq_choice else 1)
+    with col3:
+        sim_method = st.radio("Metode", ["Monte Carlo", "Deterministik"], horizontal=True)
+        sim_n = st.slider("Jumlah Simulasi (n)", 100, 5000, 1000, step=100)
+        use_bootstrap = st.checkbox("Gunakan Bootstrap (lebih realistis)", value=True)
+
+    st.markdown("Masukkan estimasi return analis tahunan (dalam %) — pisahkan dengan koma. \
+                Tambahkan bobot opsional dengan format `return:bobot`, misal: `7:0.6,10:0.4`")
+    analyst_input = st.text_input("Estimasi Analis", value="7,10")
+
+    if st.button("▶️ Jalankan Simulasi"):
+        analyst_list = []
+        for token in analyst_input.split(","):
+            token = token.strip()
+            if not token:
+                continue
+            try:
+                if ":" in token:
+                    r_str, w_str = token.split(":")
+                    analyst_list.append({"r": float(r_str) / 100.0, "w": float(w_str)})
+                else:
+                    analyst_list.append(float(token) / 100.0)
+            except Exception:
+                st.warning(f"Format salah pada token '{token}'. Abaikan.")
+                continue
+
+        with st.spinner("⏳ Menjalankan simulasi..."):
+            sim_result = analyzer.simulate_long_term_investment(
+                ticker=sim_ticker.strip().upper(),
+                years=sim_years,
+                initial_capital=sim_initial,
+                periodic_contribution=sim_contrib,
+                contribution_freq_per_year=sim_freq,
+                n_simulations=sim_n,
+                method="deterministic" if sim_method.startswith("Det") else "mc",
+                analyst_estimates=analyst_list,
+                use_bootstrap=use_bootstrap,
+                seed=42
+            )
+
+        if "error" in sim_result:
+            st.error(f"❌ Simulasi gagal: {sim_result['error']}")
+        else:
+            # ========== RINGKASAN ==========
+            st.subheader("📊 Ringkasan Hasil")
+            colA, colB, colC = st.columns(3)
+            colA.metric("Rata-rata (Mean)", f"{sim_result.get('mc_mean', sim_result.get('projection', 0)):,.0f}")
+            colB.metric("Median (P50)", f"{sim_result.get('mc_percentiles', {}).get(50, 0):,.0f}")
+            colC.metric("Sharpe Ratio", f"{sim_result.get('sharpe_ratio', 0):.2f}")
+
+            colD, colE, colF = st.columns(3)
+            colD.metric("Probabilitas Rugi", f"{sim_result.get('prob_loss', 0)*100:.1f}%")
+            colE.metric("Expected CAGR", f"{sim_result.get('expected_cagr', sim_result.get('historical_cagr', 0))*100:.2f}%")
+            colF.metric("Simulasi", f"{sim_result.get('n_simulations', 0)}x")
+
+            # ========== DISTRIBUSI ==========
+            if sim_result["method"] == "mc":
+                st.subheader("📈 Distribusi Hasil Monte Carlo")
+                df_percentiles = pd.DataFrame.from_dict(sim_result["mc_percentiles"], orient="index", columns=["Final Value"])
+                df_percentiles.index = [f"P{int(x)}" for x in df_percentiles.index]
+                st.dataframe(df_percentiles.style.format("{:,.0f}"))
+
+                fig = go.Figure()
+                fig.add_trace(go.Box(y=np.array(list(sim_result["mc_percentiles"].values())),
+                                     name="Percentile Spread", boxmean=True))
+                fig.update_layout(title="Distribusi Nilai Akhir (Monte Carlo)", template="plotly_dark")
+                st.plotly_chart(fig, use_container_width=True)
+
+                # ========== SAMPLE PATHS ==========
+                sample_paths = sim_result.get("sample_paths")
+                if sample_paths:
+                    st.subheader("📉 Jalur Simulasi (Sample Paths)")
+                    fig2 = go.Figure()
+                    for p in sample_paths[:min(50, len(sample_paths))]:
+                        fig2.add_trace(go.Scatter(y=p, mode="lines", line=dict(width=1), opacity=0.6))
+                    fig2.update_layout(title="Simulasi Investasi Jangka Panjang", template="plotly_dark", height=400)
+                    st.plotly_chart(fig2, use_container_width=True)
+
+                # ========== SENSITIVITY ==========
+                if sim_result.get("sensitivity"):
+                    st.subheader("📊 Analisis Sensitivitas")
+                    sens_df = pd.DataFrame.from_dict(sim_result["sensitivity"], orient="index", columns=["Nilai"])
+                    st.dataframe(sens_df.style.format("{:,.0f}"))
+
+            else:
+                st.subheader("💡 Proyeksi Deterministik")
+                st.write(f"**CAGR Historis:** {sim_result.get('historical_cagr', 0)*100:.2f}%")
+                st.write(f"**Proyeksi Nilai Akhir:** {sim_result.get('projection', 0):,.0f}")
+
+            # ========== ANALYST SCENARIOS ==========
+            if sim_result.get("analyst_scenarios"):
+                st.subheader("👥 Estimasi Analis")
+                df_analyst = pd.DataFrame(sim_result["analyst_scenarios"])
+                df_analyst["annual_return_%"] = df_analyst["annual_return"] * 100
+                st.dataframe(df_analyst[["annual_return_%", "weight", "final_value"]].style.format("{:,.2f}"))
+    st.stop()
+
+
+# ---------------------------
+# App header
+# ---------------------------
+st.title("📈 Automated Stock Recommender")
+st.markdown("Real-time-ish recommendation engine (yfinance). Dashboard shows top recommended stocks and expandable detail per stock.")
 
 # ---------------------------
 # Mode Analisis
@@ -180,9 +307,6 @@ selected_tickers = []
 if analysis_mode == "Single Analysis (Manual)":
     selected_tickers = st.multiselect("Centang saham yang ingin dianalisis:", options=tickers, default=tickers[:1] if tickers else [])
     st.markdown("<small style='color:gray'>Mode ini menganalisis satu atau beberapa saham dengan tampilan grafik dan indikator lengkap.</small>", unsafe_allow_html=True)
-
-analyzer = AutomatedStockAnalyzer()
-
 
 # ---------------------------
 # Generate Recommendations
@@ -368,6 +492,7 @@ for ticker, score in ranked:
             if st.button(f"➕ Add {ticker} to Watchlist", key=f"wl_{ticker}"):
                 if ticker not in st.session_state["watchlist"]:
                     st.session_state["watchlist"].append(ticker)
+                    analyzer.discord.send_watchlist_added(ticker) 
                     st.success(f"{ticker} added to watchlist")
                 else:
                     st.info(f"{ticker} is already in watchlist")
@@ -395,13 +520,25 @@ wl = st.session_state.get("watchlist", [])
 st.sidebar.write("Saved tickers:")
 for t in wl:
     st.sidebar.write(f"- {t}")
-if st.sidebar.button("Export Watchlist CSV"):
-    if wl:
-        wl_df = pd.DataFrame(wl, columns=["Ticker"])
-        csv_bytes = wl_df.to_csv(index=False).encode("utf-8")
-        st.sidebar.download_button("Download watchlist", data=csv_bytes, file_name="watchlist.csv", mime="text/csv")
-    else:
-        st.sidebar.info("Watchlist kosong.")
+# if st.sidebar.button("Export Watchlist CSV"):
+#     if wl:
+#         wl_df = pd.DataFrame(wl, columns=["Ticker"])
+#         csv_bytes = wl_df.to_csv(index=False).encode("utf-8")
+#         st.sidebar.download_button("Download watchlist", data=csv_bytes, file_name="watchlist.csv", mime="text/csv")
+#     else:
+#         st.sidebar.info("Watchlist kosong.")
+
+# if st.sidebar.button(f"📢 Kirim sinyal ke Discord"):
+#     result = analysis.get(ticker, {})
+#     signal = result.get("signal", "")
+#     if "BUY" in signal or "SELL" in signal or "STRONG BUY" in signal or "STRONG SELL" in signal:
+#         price = float(result.get("last_price", 0))
+#         conf = result.get("score", 0) / 100
+#         summary = result.get("timing_advice", "")
+#         analyzer.discord.send_message(ticker, signal, price, conf, summary)
+#         st.success(f"Notifikasi {signal} {ticker} dikirim ke Discord!")
+#     else:
+#         st.warning(f"Tidak ada sinyal BUY/SELL untuk {ticker} ({signal}).")
 
 
 # ---------------------------
