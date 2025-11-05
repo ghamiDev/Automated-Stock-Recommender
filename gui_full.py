@@ -9,6 +9,8 @@ from idx_listed import get_idx_tickers
 from pathlib import Path
 from dotenv import load_dotenv
 import numpy as np
+from analyzer_full_one_day import AutomatedStockAnalyzerDailyTP, render_daily_tp_page
+
 
 load_dotenv()
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK ")
@@ -105,7 +107,7 @@ with st.sidebar:
     st.markdown("Configure your analysis below:")
 
     # ===== App page selector =====
-    app_page = st.selectbox("Menu", ["Dashboard","Simulator Investasi"], index=0)
+    app_page = st.selectbox("Menu", ["Dashboard","Simulator Investasi", "Analisa TP Harian"], index=0)
 
     # === Pilihan sektor saham ===
     st.markdown("### 📊 Pilih Sektor Saham")
@@ -288,6 +290,12 @@ if current_app_page == "Simulator Investasi":
                 df_analyst = pd.DataFrame(sim_result["analyst_scenarios"])
                 df_analyst["annual_return_%"] = df_analyst["annual_return"] * 100
                 st.dataframe(df_analyst[["annual_return_%", "weight", "final_value"]].style.format("{:,.2f}"))
+    st.stop()
+
+if current_app_page == "Analisa TP Harian":
+    analyzer_tp = AutomatedStockAnalyzerDailyTP()
+    analyzer_tp.set_watchlist(st.session_state.get("watchlist", []))
+    render_daily_tp_page(analyzer_tp, tickers, period_choice, interval_choice, top_n, capital, risk_percent)
     st.stop()
 
 
