@@ -80,7 +80,7 @@ class AutomatedStockAnalyzer:
     # -------------------------
     # Data fetching
     # -------------------------
-    def get_stock_data(self, ticker: str, period: str = "1mo", interval: str = "60m") -> Optional[Dict[str, Any]]:
+    def get_stock_data(self, ticker: str, period: str, interval: str ) -> Optional[Dict[str, Any]]:
         """
         Returns dict with keys: ticker, hist (DataFrame), info, financials, balance_sheet, cash_flow
         Caches results for cache_ttl seconds.
@@ -646,7 +646,7 @@ class AutomatedStockAnalyzer:
     # -------------------------
     # Single stock full analysis pipeline (final unified)
     # -------------------------
-    def analyze_one(self, ticker: str, period: str = "1mo", interval: str = "60m", capital: float = 100_000_000, risk_percent: float = 1.0) -> Optional[Dict[str, Any]]:
+    def analyze_one(self, ticker: str, period: str , interval: str, capital: float, risk_percent: float) -> Optional[Dict[str, Any]]:
         stock_data = self.get_stock_data(ticker, period=period, interval=interval)
         if not stock_data:
             return None

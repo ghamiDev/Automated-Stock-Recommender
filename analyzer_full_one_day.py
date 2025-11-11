@@ -6,6 +6,7 @@ import time
 import math
 import streamlit as st
 import yfinance as yf
+import plotly.graph_objects as go
 
 # Try import base analyzer (your project). If not available, provide a stub so file loads.
 try:
@@ -369,7 +370,7 @@ def render_daily_tp_page(analyzer_obj: AutomatedStockAnalyzerDailyTP, tickers: L
 
                     with cols[0]:
                         st.markdown("**Candlestick (mini)**")
-                        import plotly.graph_objects as go
+                       
                         if not df.empty:
                             fig = go.Figure(data=[go.Candlestick(
                                 x=df.index, open=df["Open"], high=df["High"], low=df["Low"], close=df["Close"], name="Price"

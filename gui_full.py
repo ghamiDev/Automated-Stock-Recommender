@@ -10,6 +10,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import numpy as np
 from analyzer_full_one_day import AutomatedStockAnalyzerDailyTP, render_daily_tp_page
+import textwrap
 
 
 load_dotenv()
@@ -148,8 +149,8 @@ with st.sidebar:
 
     # Time & analysis settings
     st.markdown("### ⏱️ Time Settings")
-    period_choice = st.selectbox("🗓️ Period for analysis", ["1mo", "3mo", "6mo", "1y"], index=0)
-    interval_choice = st.selectbox("⏰ Interval (yfinance)", ["60m", "90m", "1d"], index=0)
+    period_choice = st.selectbox("🗓️ Period for analysis", ["1mo", "3mo", "6mo", "5d","1y"], index=0)
+    interval_choice = st.selectbox("⏰ Interval (yfinance)", ["1h","30m","60m", "90m", "1d"], index=0)
 
     # Analysis settings
     st.markdown("### 📊 Analysis Settings")
@@ -353,10 +354,14 @@ if res_pack is None:
     st.stop()
 
 
+ranked = res_pack.get("top", [])
+def render_html(html: str):
+    st.markdown(textwrap.dedent(html), unsafe_allow_html=True)
+
+
 # ---------------------------
 # Top Recommendations
 # ---------------------------
-ranked = res_pack.get("top", [])
 st.subheader("Top Recommendations Today")
 
 if not ranked:
@@ -518,6 +523,128 @@ for ticker, score in ranked:
         )
         st.info(summary)
 
+# ============================================================
+# 📋 AI Kesimpulan Rekomendasi Jangka Pendek (1–3 Hari)
+# ============================================================
+if ranked:
+    st.markdown("### 🤖 Kesimpulan AI Rekomendasi Jangka Pendek (1–3 Hari)")
+
+    top5 = ranked[:5]
+    total_market_strength = 0
+    composite_results = []
+    macro = res_pack.get("macro", {})
+    market_sentiment = macro.get("market_sentiment", "Neutral")
+
+    for ticker, score in top5:
+        analysis = res_pack["results"].get(ticker)
+        if not analysis:
+            continue
+        df = analysis["price_data"]
+        last = df.iloc[-1]
+        fm = analysis["fundamental_metrics"]
+        plan = analysis["3day_plan"]
+        ts = analysis["technical_score"]
+
+        # ----- TECHNICAL INDICATORS -----
+        rsi = 100 - abs(50 - last.get("RSI_14", 50)) * 2
+        macd = np.clip(50 + last.get("MACD_Hist", 0) * 10, 0, 100)
+        ma_trend = ts["components"].get("ma_trend_score", 50)
+        vol_ratio = min(last.get("Vol_Ratio", 1) * 50, 100)
+        ti_score = np.mean([rsi, macd, ma_trend, vol_ratio])
+
+        # ----- DEEP TECHNICAL -----
+        adx = last.get("ADX_14", 25)
+        ema_cross = 100 if last.get("EMA_8", 0) > last.get("EMA_21", 0) > last.get("EMA_50", 0) else 50
+        obv_trend = 70 if last.get("OBV", 0) > df["OBV"].mean() else 40
+        vwap = 70 if last.get("Close", 0) > last.get("VWAP", 0) else 40
+        deep_score = np.mean([adx, ema_cross, obv_trend, vwap])
+
+        # ----- FUNDAMENTAL METRICS -----
+        roe = min(fm.get("roe", 0), 30)
+        der = 100 - min(fm.get("der", 1) * 10, 100)
+        pe = 100 - min(fm.get("pe_ratio", 15) * 2, 100)
+        pb = 100 - min(fm.get("pb_ratio", 1.5) * 30, 100)
+        fm_score = np.mean([roe, der, pe, pb])
+
+        # ----- MACRO CONTEXT -----
+        macro_adj = 0
+        if market_sentiment == "Risk-on":
+            macro_adj = 10
+        elif market_sentiment == "Risk-off":
+            macro_adj = -10
+
+        # ----- RECOMMENDER -----
+        recomm_score = ts["score"]
+
+        # Final composite weighted score
+        final = (
+            0.25 * ti_score +
+            0.20 * deep_score +
+            0.20 * fm_score +
+            0.10 * (50 + macro_adj) +
+            0.25 * recomm_score
+        )
+
+        composite_results.append({
+            "ticker": ticker,
+            "final_score": round(final, 2),
+            "ti_score": ti_score,
+            "deep_score": deep_score,
+            "fm_score": fm_score,
+            "macro_adj": macro_adj,
+            "recommend_score": recomm_score,
+            "signal": ts["signal"],
+            "trend": "Uptrend" if ma_trend > 60 else "Sideway" if 40 <= ma_trend <= 60 else "Downtrend",
+            "plan": plan,
+        })
+        total_market_strength += final
+
+    avg_market_strength = total_market_strength / len(composite_results)
+    best_pick = max(composite_results, key=lambda x: x["final_score"])
+
+    # ----- Interpretasi Kesimpulan -----
+    if avg_market_strength >= 80:
+        market_view = "📈 Momentum pasar sangat kuat — peluang kenaikan tinggi dalam 1–3 hari."
+        color = "#16a34a"
+    elif avg_market_strength >= 60:
+        market_view = "⚖️ Pasar dalam fase konsolidasi dengan bias positif — tetap waspada terhadap volatilitas."
+        color = "#facc15"
+    else:
+        market_view = "📉 Tekanan jual meningkat — potensi koreksi jangka pendek lebih besar."
+        color = "#dc2626"
+
+    # ----- Render HTML -----
+    cards_html = ""
+    for i, r in enumerate(composite_results, start=1):
+        c = "#16a34a" if "BUY" in r["signal"] else "#dc2626" if "SELL" in r["signal"] else "#facc15"
+        emoji = "🟢" if "BUY" in r["signal"] else "🔴" if "SELL" in r["signal"] else "⚖️"
+        p = r["plan"]
+
+    best = best_pick
+    html_kete = f"""
+    <div style='background:linear-gradient(90deg,#0F172A,#1E293B);border:1px solid #334155;border-radius:14px;padding:1.2rem;margin-bottom:1rem;'>
+    <h4 style='color:{color};margin-top:0'>{market_view}</h4>
+    <p style='color:#CBD5E1'>
+        📊 <b>Rata-rata kekuatan pasar:</b> {avg_market_strength:.2f}/100<br>
+        🌍 <b>Sentimen makro:</b> {market_sentiment}<br>
+        💹 <b>Analisis dari:</b> Technical, Deep Technical, Fundamental, Macro, dan Scoring Engine
+    </p>
+    <div style='background-color:#0F172A;padding:1rem;margin-top:1rem;border-radius:12px;border:1px solid {color};'>
+    <h4 style='color:{color};margin-bottom:0.4rem;'>🔥 Saham Paling Legit untuk Trading Harian</h4>
+    <p style='font-size:1.05rem;margin:0;'>
+        <b>{best['ticker']}</b> — {best['signal']} ({best['trend']})<br>
+        Entry: <code>{best['plan']['entry']}</code> | 🎯 Target: <code>{best['plan']['target']}</code> | 🛑 Stop: <code>{best['plan']['stop']}</code><br>
+        Total Composite Score: <b>{best['final_score']:.2f}</b> / 100
+    </p>
+    </div>
+    <hr style='border:1px solid #1F2937;margin:1rem 0;'>
+    <p style='color:#94a3b8;margin-top:1rem;'>
+    💡 Kesimpulan AI di atas merupakan hasil integrasi seluruh indikator teknikal, fundamental, makro, dan sistem scoring internal
+    untuk memberikan pandangan pasar jangka pendek (1–3 hari).
+    </p>
+    </div>
+    """
+    render_html(html_kete)
 
 # ---------------------------
 # Watchlist panel
