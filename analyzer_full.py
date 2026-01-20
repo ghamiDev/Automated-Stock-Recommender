@@ -1211,7 +1211,7 @@ class AutomatedStockAnalyzer:
     # ---- Batch runner (generate_recommendations) with modes and safe history tracking ----  period="3mo", interval="1h"
     def generate_recommendations(
         self, tickers:list, period: str, interval: str,
-        top_n: int, capital=50_000_000, risk_percent=1.0, mode="deep"):
+        top_n: int, capital=50_000_000, risk_percent=1.0, mode="deep", type: str = "full"):
 
         results = {}
         ranked = []
@@ -1283,8 +1283,19 @@ class AutomatedStockAnalyzer:
                     },
                     "rank_score": round(total_score,2)
                 }
-
-                if signal == "BUY":
+                
+                if type == "full":
+                    if signal == "BUY":
+                        ranked.append({
+                            "ticker": ticker,
+                            "score": total_score,
+                            "projects": data["project_activity"]["active_projects"],
+                            "signal": signal,
+                            "entry": round(entry, 3),
+                            "tp": round(tp, 3),
+                            "sl": round(sl, 3)
+                        })
+                else:
                     ranked.append({
                         "ticker": ticker,
                         "score": total_score,
@@ -1294,6 +1305,7 @@ class AutomatedStockAnalyzer:
                         "tp": round(tp, 3),
                         "sl": round(sl, 3)
                     })
+                    
 
             except Exception as e:
                 pass

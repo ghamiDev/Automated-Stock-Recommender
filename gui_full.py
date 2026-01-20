@@ -387,7 +387,8 @@ if analysis_mode == "All Analysis (Full Auto)":
                 top_n=top_n,
                 risk_percent=risk_percent,
                 capital=capital,
-                mode="deep"
+                mode="deep",
+                type="full"
             )
 
             st.session_state["last_results"] = res_pack
@@ -403,9 +404,9 @@ elif analysis_mode == "Single Analysis (Manual)" and selected_tickers:
                 top_n=top_n,
                 risk_percent=risk_percent,
                 capital=capital,
-                mode="deep"
+                mode="deep",
+                type="single"
             )
-
             st.session_state["last_results"] = res_pack
             st.session_state["last_run"] = datetime.now().isoformat()
             st.rerun()
