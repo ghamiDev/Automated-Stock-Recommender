@@ -459,6 +459,29 @@ def get_quick_prediction(ticker: str, analyzer: AutomatedStockAnalyzer) -> str:
             return f"↔️ {up_days}/{down_days}H"
     except Exception as e:
         return "N/A"
+
+# Fungsi helper untuk indicator cepat
+def get_multibagger_indicator(ticker: str, analyzer: AutomatedStockAnalyzer) -> str:
+    """Get quick multibagger indicator for table"""
+    try:
+        # Quick check without full analysis
+        stock_data = analyzer.get_stock_data(ticker, period="1y", interval="1d")
+        if not stock_data or stock_data["hist"].empty:
+            return "N/A"
+        
+        df = stock_data["hist"]
+        
+        # Quick growth check
+        if len(df) >= 200:
+            growth_6m = (df["Close"].iloc[-1] / df["Close"].iloc[-126] - 1) * 100 if len(df) >= 126 else 0
+            if growth_6m > 30:  # >30% in 6 months
+                return "🚀 High"
+            elif growth_6m > 15:
+                return "📈 Medium"
+        
+        return "📊 Low"
+    except:
+        return "N/A"
     
 st.subheader("Top Recommendations Today")
 
@@ -500,6 +523,7 @@ else:
                 "Change%": round(float(change_pct), 2) if change_pct else None,
                 "Signal": analysis["technical_score"]["signal"],
                 "Score": round(analysis["technical_score"]["score"], 1),
+                "Multibagger": get_multibagger_indicator(ticker, analyzer),
                 "Prediksi 5H": f"{get_quick_prediction(ticker, analyzer)}",
                 "Trend": "⬆️" if analysis["technical_score"]["components"]["ma_trend_score"] > 50 else "↔️" if 40 <= analysis["technical_score"]["components"]["ma_trend_score"] <= 60 else "⬇️",
                 "Demand": analysis["demand_analysis"].get("demand_score", 0),  # Perhatikan key yang benar
@@ -519,6 +543,237 @@ else:
 # ---------------------------
 # Detail Panels
 # ---------------------------
+def render_multibagger_detail_in_expander(mb_result: dict, ticker: str):
+    """Render detail multibagger analysis dalam expander"""
+    
+    # Create tabs for detailed analysis
+    mb_tab1, mb_tab2, mb_tab3, mb_tab4 = st.tabs([
+        "📈 Growth Analysis", 
+        "💼 Fundamental Deep Dive", 
+        "💰 Valuation Metrics", 
+        "🎯 Investment Strategy"
+    ])
+    
+    with mb_tab1:
+        growth = mb_result["growth_metrics"]
+        
+        st.markdown("**Growth Metrics:**")
+        col_g1, col_g2 = st.columns(2)
+        
+        with col_g1:
+            st.metric("CAGR 5 Tahun", f"{growth['cagr_5y']}%", 
+                     delta="Excellent" if growth['cagr_5y'] > 25 else 
+                           "Good" if growth['cagr_5y'] > 15 else "Poor")
+            
+            st.metric("Revenue Growth", f"{growth['revenue_growth']}%",
+                     delta="High" if growth['revenue_growth'] > 20 else "Low")
+        
+        with col_g2:
+            st.metric("Momentum 6 Bulan", f"{growth['momentum_6m']}%")
+            st.metric("Earnings Growth", f"{growth['earnings_growth']}%",
+                     delta="Strong" if growth['earnings_growth'] > 20 else "Weak")
+        
+        # Growth chart suggestion
+        st.markdown("**📊 Growth Chart Suggestion:**")
+        st.info("""
+        Untuk analisis pertumbuhan lebih dalam:
+        1. Lihat chart 5 tahun di tab utama
+        2. Perhatikan konsistensi pertumbuhan
+        3. Cari pola higher highs & higher lows
+        """)
+    
+    with mb_tab2:
+        fund = mb_result["fundamentals"]
+        
+        st.markdown("**Fundamental Strength:**")
+        
+        # ROE vs ROA
+        col_f1, col_f2 = st.columns(2)
+        with col_f1:
+            st.metric("Return on Equity (ROE)", f"{fund['roe']}%",
+                     delta="Excellent" if fund['roe'] > 20 else 
+                           "Good" if fund['roe'] > 15 else "Poor")
+        with col_f2:
+            st.metric("Return on Assets (ROA)", f"{fund['roa']}%")
+        
+        # Debt and Margins
+        col_f3, col_f4 = st.columns(2)
+        with col_f3:
+            st.metric("Debt to Equity", f"{fund['debt_to_equity']}",
+                     delta="Low" if fund['debt_to_equity'] < 0.5 else 
+                           "Moderate" if fund['debt_to_equity'] < 1 else "High")
+        with col_f4:
+            st.metric("Profit Margin", f"{fund['profit_margin']}%",
+                     delta="High" if fund['profit_margin'] > 20 else 
+                           "Average" if fund['profit_margin'] > 10 else "Low")
+        
+        # Fundamental assessment
+        st.markdown("**📋 Fundamental Assessment:**")
+        if fund['roe'] > 15 and fund['debt_to_equity'] < 1 and fund['profit_margin'] > 10:
+            st.success("✅ Fundamental sangat kuat - perusahaan efisien dan profitable")
+        elif fund['roe'] > 10 and fund['debt_to_equity'] < 1.5:
+            st.warning("⚠️ Fundamental cukup baik - ada ruang perbaikan")
+        else:
+            st.error("❌ Fundamental lemah - perlu perbaikan")
+    
+    with mb_tab3:
+        val = mb_result["valuation"]
+        
+        st.markdown("**Valuation Analysis:**")
+        
+        # Price Ratios
+        col_v1, col_v2, col_v3 = st.columns(3)
+        with col_v1:
+            pe_status = "Cheap" if val['pe_ratio'] < 15 else "Fair" if val['pe_ratio'] < 25 else "Expensive"
+            st.metric("P/E Ratio", f"{val['pe_ratio']}", delta=pe_status)
+        
+        with col_v2:
+            pb_status = "Cheap" if val['pb_ratio'] < 1 else "Fair" if val['pb_ratio'] < 3 else "Expensive"
+            st.metric("P/B Ratio", f"{val['pb_ratio']}", delta=pb_status)
+        
+        with col_v3:
+            peg_status = "Very Cheap" if val['peg_ratio'] < 0.5 else "Cheap" if val['peg_ratio'] < 1 else "Fair"
+            st.metric("PEG Ratio", f"{val['peg_ratio']}", delta=peg_status)
+        
+        # Market Cap Analysis
+        st.markdown(f"**Market Cap:** {val['market_cap_category']}")
+        
+        if val['market_cap_category'] == "Small Cap":
+            st.info("""
+            **Small Cap Advantage:**
+            • Ruang tumbuh lebih besar
+            • Potensi multibagger tinggi
+            • Risiko juga lebih tinggi
+            """)
+        elif val['market_cap_category'] == "Mid Cap":
+            st.info("""
+            **Mid Cap Advantage:**
+            • Sudah terbukti track record
+            • Masih punya ruang tumbuh
+            • Risiko moderat
+            """)
+        else:
+            st.info("""
+            **Large Cap Characteristic:**
+            • Sudah mature
+            • Pertumbuhan lebih lambat
+            • Risiko rendah, return moderat
+            """)
+        
+        # Valuation Summary
+        st.markdown("**💡 Valuation Summary:**")
+        if val['peg_ratio'] < 1 and val['pe_ratio'] < 25:
+            st.success("✅ Valuasi menarik - growth dengan harga reasonable")
+        elif val['peg_ratio'] < 1.5 and val['pe_ratio'] < 30:
+            st.warning("⚠️ Valuasi fair - growth sebanding dengan harga")
+        else:
+            st.error("❌ Valuasi mahal - growth tidak sebanding dengan harga")
+    
+    with mb_tab4:
+        st.markdown("**🎯 Investment Strategy for Multibagger Potential**")
+        
+        score = mb_result["multibagger_score"]
+        targets = mb_result["next_targets"]
+        current_price = mb_result["technical"]["current_price"]
+        
+        if score >= 70:
+            st.success("""
+            ### 🏆 **STRATEGY: STRONG BUY & HOLD**
+            
+            **Entry Strategy:**
+            1. **Akumulasi bertahap** - 25% sekarang, 25% di pullback 10%
+            2. **Average down** jika turun lebih dari 20%
+            3. **Avoid FOMO** - jangan beli semua di harga tinggi
+            
+            **Position Sizing:**
+            • Allocate 5-10% portfolio untuk saham ini
+            • Maximum 15% untuk high conviction multibagger
+            
+            **Hold Period:**
+            • Minimum: 3 tahun
+            • Optimal: 5-7 tahun
+            • Review quarterly, tetapi jangan panic sell
+            
+            **Exit Strategy:**
+            1. **Target 1:** 3x return (IDR {:,}) - take 30% profit
+            2. **Target 2:** 5x return (IDR {:,}) - take another 30%
+            3. **Target 3:** 10x return (IDR {:,}) - hold remaining 40%
+            4. **Stop Loss:** -30% dari average cost
+            
+            **Risk Management:**
+            • Diversify dengan saham lain
+            • Never go all-in on one stock
+            • Have an exit plan before entering
+            """.format(
+                int(targets['3x_return']), 
+                int(targets['5x_return']), 
+                int(targets['10x_return'])
+            ))
+        
+        elif score >= 50:
+            st.warning("""
+            ### ⚠️ **STRATEGY: WATCH & ACCUMULATE ON WEAKNESS**
+            
+            **Entry Strategy:**
+            1. **Wait for pullback** - beli di support kuat
+            2. **Start small** - initial position 2-3%
+            3. **Add more** jika fundamental membaik
+            
+            **Position Sizing:**
+            • Maximum 3-5% portfolio
+            • Incremental buying only
+            
+            **Hold Period:**
+            • Flexible 1-3 tahun
+            • Exit jika thesis broken
+            
+            **Exit Strategy:**
+            1. **Take profit** di 50-100% gain
+            2. **Stop loss** di -20%
+            3. **Re-evaluate** setiap earnings report
+            
+            **Monitoring:**
+            • Watch quarterly earnings growth
+            • Monitor debt levels
+            • Track industry trends
+            """)
+        
+        else:
+            st.info("""
+            ### 🔍 **STRATEGY: NOT FOR LONG TERM**
+            
+            **Alternative Approaches:**
+            1. **Swing Trading** - capitalizing on volatility
+            2. **Dividend Play** - jika dividend yield menarik
+            3. **Sector Rotation** - tunggu sektor membaik
+            
+            **Better Alternatives:**
+            • Cari saham dengan score >70 di Multibagger Finder
+            • Fokus pada quality growth stocks
+            • Consider ETF untuk diversifikasi
+            
+            **If You Still Want to Invest:**
+            • Maximum 1-2% portfolio allocation
+            • Strict stop loss at -15%
+            • Take quick profits at 20-30%
+            """)
+        
+        # Add to watchlist button
+        if st.button(f"⭐ Add {ticker} to Multibagger Watchlist", type="primary"):
+            if "multibagger_watchlist" not in st.session_state:
+                st.session_state["multibagger_watchlist"] = []
+            
+            if ticker not in st.session_state["multibagger_watchlist"]:
+                st.session_state["multibagger_watchlist"].append({
+                    "ticker": ticker,
+                    "score": score,
+                    "analysis_date": datetime.now().isoformat(),
+                    "analysis": mb_result
+                })
+                st.success(f"✅ {ticker} added to Multibagger Watchlist!")
+            else:
+                st.info(f"ℹ️ {ticker} already in Multibagger Watchlist")
+
 st.subheader("Details (expand a row to view full analysis)")
 # PERBAIKAN: unpack 3 nilai
 for item in ranked:
@@ -712,6 +967,154 @@ for item in ranked:
                 else:
                     st.info(f"**AI Prediksi:** {ticker} cenderung sideway")    
 
+        st.markdown("🚀 **Multibagger Potential Analysis**")
+        # Tombol untuk analisis multibagger
+        if st.button(f"🏆 Cek Potensi Multibagger", key=f"mb_{ticker}"):
+            with st.spinner(f"Analisis multibagger untuk {ticker}..."):
+                mb_result = analyzer.analyze_multibagger_potential(ticker, lookback_years=5)
+            
+            if "error" in mb_result:
+                st.error(f"Multibagger analysis failed: {mb_result['error']}")
+            else:
+                # Display multibagger score card
+                score = mb_result["multibagger_score"]
+                recommendation = mb_result["recommendation"]
+                emoji = mb_result["recommendation_emoji"]
+                
+                # Color based on score
+                if score >= 70:
+                    color = "#16a34a"
+                    bg_color = "#16a34a20"
+                elif score >= 50:
+                    color = "#f59e0b"
+                    bg_color = "#f59e0b20"
+                else:
+                    color = "#dc2626"
+                    bg_color = "#dc262620"
+                
+                st.markdown(f"""
+                <div style='background:{bg_color}; border:2px solid {color}; border-radius:12px; padding:1rem; margin:1rem 0;'>
+                    <div style='display:flex; justify-content:space-between; align-items:center;'>
+                        <div>
+                            <h4 style='color:{color}; margin:0;'>{emoji} Multibagger Potential</h4>
+                            <p style='color:#64748b; margin:0;'>{recommendation}</p>
+                        </div>
+                        <div style='text-align:center;'>
+                            <div style='font-size:2.5rem; font-weight:bold; color:{color};'>{score}</div>
+                            <div style='color:#64748b; font-size:0.9rem;'>Score /100</div>
+                        </div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                # Key metrics in columns
+                col_mb1, col_mb2, col_mb3, col_mb4 = st.columns(4)
+                
+                with col_mb1:
+                    cagr = mb_result["growth_metrics"]["cagr_5y"]
+                    st.metric("CAGR 5y", f"{cagr}%", delta=">25%" if cagr > 25 else None)
+                
+                with col_mb2:
+                    roe = mb_result["fundamentals"]["roe"]
+                    st.metric("ROE", f"{roe}%", delta=">15%" if roe > 15 else None)
+                
+                with col_mb3:
+                    pe = mb_result["valuation"]["pe_ratio"]
+                    st.metric("P/E Ratio", f"{pe}", delta="<25" if pe < 25 and pe > 0 else None)
+                
+                with col_mb4:
+                    market_cap = mb_result["valuation"]["market_cap_category"]
+                    st.metric("Market Cap", market_cap)
+                
+                # Criteria met
+                st.markdown("**✅ Kriteria Multibagger Terpenuhi:**")
+                criteria = mb_result["criteria_met"]
+                if criteria:
+                    # Display in 2 columns
+                    col_crit1, col_crit2 = st.columns(2)
+                    with col_crit1:
+                        for crit in criteria[:len(criteria)//2]:
+                            st.success(f"✓ {crit.replace('_', ' ').title()}")
+                    with col_crit2:
+                        for crit in criteria[len(criteria)//2:]:
+                            st.success(f"✓ {crit.replace('_', ' ').title()}")
+                else:
+                    st.info("Belum ada kriteria multibagger yang terpenuhi")
+                
+                # Risks
+                risks = mb_result["risks"]
+                if risks:
+                    st.markdown("**⚠️ Risks Identified:**")
+                    for risk in risks:
+                        st.error(f"• {risk.replace('_', ' ').title()}")
+                
+                # Target prices
+                st.markdown("**🎯 Multibagger Target Prices:**")
+                targets = mb_result["next_targets"]
+                col_target1, col_target2, col_target3 = st.columns(3)
+                
+                with col_target1:
+                    st.metric("3x Return", f"IDR {targets['3x_return']:,.0f}")
+                with col_target2:
+                    st.metric("5x Return", f"IDR {targets['5x_return']:,.0f}")
+                with col_target3:
+                    st.metric("10x Return", f"IDR {targets['10x_return']:,.0f}")
+                
+                # Quick recommendation
+                st.markdown("**🤖 AI Multibagger Recommendation:**")
+                if score >= 70:
+                    st.success(f"""
+                    **STRONG MULTIBAGGER CANDIDATE** - {ticker} berpotensi menjadi saham multibagger (10x-100x)
+                    
+                    **Alasan:**
+                    • CAGR sangat tinggi ({cagr}%)
+                    • Fundamental kuat (ROE: {roe}%)
+                    • {len(criteria)} kriteria multibagger terpenuhi
+                    
+                    **Strategi:**
+                    1. Akumulasi untuk jangka panjang (3-5 tahun)
+                    2. Hold melalui volatilitas
+                    3. Target: 3x-10x dari harga sekarang
+                    """)
+                elif score >= 50:
+                    st.warning(f"""
+                    **POTENTIAL CANDIDATE** - {ticker} punya potensi, butuh konfirmasi
+                    
+                    **Alasan:**
+                    • CAGR cukup baik ({cagr}%)
+                    • Beberapa kriteria terpenuhi
+                    • Perlu monitoring lebih lanjut
+                    
+                    **Strategi:**
+                    1. Bisa dipertimbangkan untuk akumulasi kecil
+                    2. Monitor quarterly results
+                    3. Stop loss ketat
+                    """)
+                else:
+                    st.info(f"""
+                    **NOT A MULTIBAGGER** - {ticker} tidak memenuhi kriteria multibagger
+                    
+                    **Alasan:**
+                    • Growth tidak cukup tinggi
+                    • Valuasi mungkin mahal
+                    • Risiko terlalu tinggi
+                    
+                    **Strategi:**
+                    1. Lebih baik untuk trading jangka pendek
+                    2. Hindari long term investment
+                    3. Cari peluang saham lain
+                    """)
+                
+                # Button for detailed analysis
+                if st.button("📊 Lihat Analisis Lengkap", key=f"mb_detail_{ticker}"):
+                    # Store in session state and show expanded view
+                    st.session_state[f"show_mb_detail_{ticker}"] = True
+                    
+                # Show detailed analysis if button clicked
+                if st.session_state.get(f"show_mb_detail_{ticker}", False):
+                    render_multibagger_detail_in_expander(mb_result, ticker)
+
+        # Show more info about the analysis
         st.markdown("---")
         st.markdown("**AI Summary (templated)**")
         score_val = analysis["technical_score"]["score"]

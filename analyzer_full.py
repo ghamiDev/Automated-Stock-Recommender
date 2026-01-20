@@ -1208,6 +1208,270 @@ class AutomatedStockAnalyzer:
         winrate = round((wins / total * 100), 2) if total > 0 else 0.0
         return {"total_signals": total, "wins": wins, "losses": losses, "winrate": winrate}
 
+    # mutibagar
+    def analyze_multibagger_potential(self, ticker: str, lookback_years: int = 5) -> dict:
+        
+        try:
+            # Ambil data historis panjang
+            stock_data = self.get_stock_data(ticker, period=f"{lookback_years}y", interval="1d")
+            if not stock_data or stock_data["hist"].empty:
+                return {"error": "no_data", "ticker": ticker}
+            
+            df = stock_data["hist"].copy().sort_index()
+            info = stock_data.get("info", {})
+            
+            if len(df) < 100:  # Minimal data
+                return {"error": "insufficient_data", "ticker": ticker}
+            
+            # ======================
+            # 1. ANALISIS GROWTH
+            # ======================
+            prices = df["Close"]
+            
+            # CAGR 5 tahun
+            if len(prices) >= 252 * lookback_years:
+                cagr = ((prices.iloc[-1] / prices.iloc[0]) ** (1/lookback_years)) - 1
+            else:
+                # Jika data kurang, hitung berdasarkan available data
+                years_data = len(prices) / 252
+                cagr = ((prices.iloc[-1] / prices.iloc[0]) ** (1/years_data)) - 1 if years_data > 0 else 0
+            
+            # Momentum terkini (6 bulan vs 1 tahun)
+            if len(prices) >= 252:
+                momentum_6m = (prices.iloc[-1] / prices.iloc[-126]) - 1 if len(prices) >= 126 else 0
+                momentum_1y = (prices.iloc[-1] / prices.iloc[-252]) - 1
+                momentum_ratio = safe_div(momentum_6m, momentum_1y)
+            else:
+                momentum_6m = momentum_1y = momentum_ratio = 0
+            
+            # ======================
+            # 2. ANALISIS FUNDAMENTAL
+            # ======================
+            # Revenue growth (jika ada)
+            revenue_growth = info.get("revenueGrowth", 0) or 0
+            
+            # Earnings growth
+            earnings_growth = info.get("earningsGrowth", 0) or 0
+            
+            # ROE dan ROA
+            roe = info.get("returnOnEquity", 0) or 0
+            roa = info.get("returnOnAssets", 0) or 0
+            
+            # Debt to Equity
+            der = info.get("debtToEquity", 0) or 0
+            
+            # Profit Margin
+            profit_margin = info.get("profitMargins", 0) or 0
+            
+            # ======================
+            # 3. ANALISIS VALUASI
+            # ======================
+            # P/E Ratio
+            pe = info.get("trailingPE", 0) or info.get("forwardPE", 0) or 0
+            
+            # P/B Ratio
+            pb = info.get("priceToBook", 0) or 0
+            
+            # PEG Ratio (Price/Earnings to Growth)
+            peg = safe_div(pe, (earnings_growth * 100)) if earnings_growth and pe else 0
+            
+            # Market Cap
+            market_cap = info.get("marketCap", 0) or 0
+            
+            # ======================
+            # 4. ANALISIS TEKNIKAL
+            # ======================
+            df = self.calculate_technical_indicators(df)
+            df = self.calculate_deep_technical_indicators(df)
+            
+            last_row = df.iloc[-1]
+            
+            # Trend strength
+            trend_strength = 1 if last_row.get("EMA_8", 0) > last_row.get("EMA_21", 0) > last_row.get("EMA_50", 0) else 0
+            
+            # Volume trend
+            volume_avg = df["Volume"].rolling(50).mean().iloc[-1]
+            volume_current = last_row.get("Volume", 0)
+            volume_ratio = safe_div(volume_current, volume_avg)
+            
+            # Breakout detection
+            high_52w = df["High"].rolling(252).max().iloc[-1] if len(df) >= 252 else df["High"].max()
+            is_near_high = (last_row["Close"] / high_52w) > 0.85 if high_52w > 0 else False
+            
+            # ======================
+            # 5. KRITERIA MULTIBAGGER
+            # ======================
+            criteria = []
+            score = 0
+            
+            # Kriteria 1: High Growth (CAGR > 25%)
+            if cagr > 0.25:
+                criteria.append("HIGH_GROWTH_CAGR")
+                score += 25
+            
+            # Kriteria 2: Accelerating Momentum
+            if momentum_ratio > 1.2:
+                criteria.append("ACCELERATING_MOMENTUM")
+                score += 15
+            
+            # Kriteria 3: Strong Fundamentals
+            if roe > 0.15:  # ROE > 15%
+                criteria.append("HIGH_ROE")
+                score += 10
+            
+            if earnings_growth > 0.20:  # Earnings growth > 20%
+                criteria.append("HIGH_EARNINGS_GROWTH")
+                score += 10
+            
+            # Kriteria 4: Reasonable Valuation
+            if 0 < peg < 1.5:
+                criteria.append("UNDERVALUED_PEG")
+                score += 10
+            
+            if pe < 25 and pe > 0:
+                criteria.append("REASONABLE_PE")
+                score += 5
+            
+            # Kriteria 5: Technical Strength
+            if trend_strength == 1:
+                criteria.append("STRONG_UPTREND")
+                score += 10
+            
+            if volume_ratio > 1.5:
+                criteria.append("HIGH_VOLUME")
+                score += 5
+            
+            if is_near_high:
+                criteria.append("NEAR_52W_HIGH")
+                score += 5
+            
+            # Kriteria 6: Small/Medium Cap (more room to grow)
+            if market_cap < 10_000_000_000_000:  # < 10T IDR
+                criteria.append("SMALL_MID_CAP")
+                score += 5
+            
+            # ======================
+            # 6. RISK ASSESSMENT
+            # ======================
+            risks = []
+            
+            if der > 1.0:
+                risks.append("HIGH_DEBT")
+            
+            if profit_margin < 0.05:  # < 5%
+                risks.append("LOW_MARGIN")
+            
+            if volume_ratio < 0.8:
+                risks.append("LOW_VOLUME")
+            
+            if cagr < 0:
+                risks.append("NEGATIVE_GROWTH")
+            
+            # ======================
+            # 7. RECOMMENDATION
+            # ======================
+            if score >= 70:
+                recommendation = "STRONG_MULTIBAGGER_POTENTIAL"
+                color = "🟢"
+            elif score >= 50:
+                recommendation = "MODERATE_MULTIBAGGER_POTENTIAL"
+                color = "🟡"
+            elif score >= 30:
+                recommendation = "WATCH_FOR_BREAKOUT"
+                color = "🟠"
+            else:
+                recommendation = "NOT_A_MULTIBAGGER"
+                color = "🔴"
+            
+            # ======================
+            # 8. COMPILE RESULTS
+            # ======================
+            return {
+                "ticker": ticker,
+                "multibagger_score": round(score, 1),
+                "recommendation": recommendation,
+                "recommendation_emoji": color,
+                "criteria_met": criteria,
+                "risks": risks,
+                "growth_metrics": {
+                    "cagr_5y": round(cagr * 100, 2),  # dalam persen
+                    "momentum_6m": round(momentum_6m * 100, 2),
+                    "momentum_1y": round(momentum_1y * 100, 2),
+                    "momentum_acceleration": round(momentum_ratio, 2),
+                    "revenue_growth": round(revenue_growth * 100, 2) if revenue_growth else 0,
+                    "earnings_growth": round(earnings_growth * 100, 2) if earnings_growth else 0,
+                },
+                "fundamentals": {
+                    "roe": round(roe * 100, 2) if roe else 0,
+                    "roa": round(roa * 100, 2) if roa else 0,
+                    "debt_to_equity": round(der, 2),
+                    "profit_margin": round(profit_margin * 100, 2) if profit_margin else 0,
+                },
+                "valuation": {
+                    "pe_ratio": round(pe, 2),
+                    "pb_ratio": round(pb, 2),
+                    "peg_ratio": round(peg, 2),
+                    "market_cap_idr": market_cap,
+                    "market_cap_category": "Small Cap" if market_cap < 5_000_000_000_000 else 
+                                        "Mid Cap" if market_cap < 20_000_000_000_000 else "Large Cap"
+                },
+                "technical": {
+                    "trend_strength": "Strong Uptrend" if trend_strength == 1 else "Weak/No Trend",
+                    "volume_ratio": round(volume_ratio, 2),
+                    "near_52w_high": is_near_high,
+                    "52w_high": round(high_52w, 2),
+                    "current_price": round(last_row["Close"], 2),
+                },
+                "next_targets": {
+                    "3x_return": round(last_row["Close"] * 3, 2),
+                    "5x_return": round(last_row["Close"] * 5, 2),
+                    "10x_return": round(last_row["Close"] * 10, 2),
+                },
+                "analysis_date": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.exception(f"Error in multibagger analysis for {ticker}: {e}")
+            return {"error": str(e), "ticker": ticker}
+        
+    def screen_multibagger_candidates(self, tickers: List[str], min_score: int = 50, top_n: int = 10) -> dict:
+        
+        candidates = []
+        
+        for ticker in tickers:
+            try:
+                result = self.analyze_multibagger_potential(ticker)
+                
+                if "error" not in result and result.get("multibagger_score", 0) >= min_score:
+                    candidates.append({
+                        "ticker": ticker,
+                        "score": result["multibagger_score"],
+                        "recommendation": result["recommendation"],
+                        "cagr": result["growth_metrics"]["cagr_5y"],
+                        "pe_ratio": result["valuation"]["pe_ratio"],
+                        "market_cap": result["valuation"]["market_cap_category"],
+                        "criteria_count": len(result["criteria_met"]),
+                        "risks_count": len(result["risks"]),
+                        "full_analysis": result
+                    })
+            except Exception as e:
+                logger.debug(f"Skipping {ticker} in multibagger screen: {e}")
+                continue
+        
+        # Sort by score descending
+        candidates.sort(key=lambda x: x["score"], reverse=True)
+        
+        return {
+            "total_screened": len(tickers),
+            "candidates_found": len(candidates),
+            "candidates": candidates[:top_n],
+            "screening_date": datetime.now().isoformat(),
+            "parameters": {
+                "min_score": min_score,
+                "top_n": top_n
+            }
+        }
+    
     # ---- Batch runner (generate_recommendations) with modes and safe history tracking ----  period="3mo", interval="1h"
     def generate_recommendations(
         self, tickers:list, period: str, interval: str,
