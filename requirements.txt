@@ -18,3 +18,4 @@ tqdm>=4.65.0
 xgboost>=2.0
 matplotlib>=3.8
 seaborn>=0.13
+flask>=2.3.0
