@@ -1,0 +1,7549 @@
+{
+  "generated_at": "2025-11-19T16:41:48.516498",
+  "global_summary": {
+    "total_signals": 7255,
+    "wins": 0,
+    "losses": 0,
+    "winrate": 0.0
+  },
+  "per_ticker": {
+    "AALI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ABDA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ACES.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "ABBA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AADI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 20,
+      "winrate": 0.0
+    },
+    "ABMM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 15,
+      "winrate": 0.0
+    },
+    "ACRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "ACST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "ADES.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ADCP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ADMF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ADHI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AGAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ADMG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AEGS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AGII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ADRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ADMR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AIMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "AGRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AHAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AISA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AKKU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AGRS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ALKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AKSI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AKRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ALDO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AKPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ALII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AMAG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AMAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AMAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AMFG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ALTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AMIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AMMN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AMOR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ALMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AMMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AMRT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ANJT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ANTM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ANDI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "APEX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "APIC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "APII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "APLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AREA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "APLN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ARCI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ARGO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ARII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "ARKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ARMY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ARKO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ARTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ARNA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ARTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ASBI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ASGR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ASDM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ASHA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ASJT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ARTI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "ASII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 15,
+      "winrate": 0.0
+    },
+    "ASLC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ASLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ASMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ASPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ASPR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ASRI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ASRM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ATAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ASSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ATIC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ATLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "AUTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AWAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AVIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "AXIO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "AYAM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "BABP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "BABY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "BACA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "AYLS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "BAJA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BALI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BANK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BAPA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BATA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BATR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BAUT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BAYU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBCA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBHI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BBKP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBLD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BBMD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BBNI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BBRI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBRM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBSS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBSI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBTN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BBYB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BCAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BCIP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BCIC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BDKR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BDMN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BEEF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BEER.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BEKS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BELI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BEBS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BELL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BESS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "BFIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BHAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BGTG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BEST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BIMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BHIT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BIKE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BINO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BINA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BIKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BIPP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BIRD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BISI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BIPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "BJTM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BJBR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BKDP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BKSW.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BKSL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BLOG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BLES.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BLTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BLTZ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BMBL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BLUE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BMHS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BMRI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 15,
+      "winrate": 0.0
+    },
+    "BMSR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BNBA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BMTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BNBR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BNII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BNGA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BNLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BOAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "BOBA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BOGA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BOLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BOLT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BOSS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "BPFI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BPTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BPII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BREN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BRAM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BRMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BRRC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BRIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BRNA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BSBK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BRPT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BSDE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BSML.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "BSIM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BSWD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BSSR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BTEK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BTEL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BTON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BTPN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BTPS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BUDI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "BUAH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BUKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BULL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "BUKK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 15,
+      "winrate": 0.0
+    },
+    "BUMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 14,
+      "winrate": 0.0
+    },
+    "BUVA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BVIC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BWPT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CAKK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CAMP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BYAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CANI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CARE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CARS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CASH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CASA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CBDK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CBMF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CASS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CBPE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CBRE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "CCSI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CDIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CBUT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CEKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CENT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CHEK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CFIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CHEM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CGAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "CHIP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CINT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CITA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CLAY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CLPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CITY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CLEO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CMNP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CMNT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CNKO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CMPP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CNMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "CMRY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "COCO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "COAL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "COIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "COWL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CPIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CPRI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CNTX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CRAB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CPRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CRSN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CSAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CSIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CSMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CSRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "CTBN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "CTRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CUAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "CTTH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "CYBR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DAAZ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DADA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DART.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DATA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DAYA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DCII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DEAL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DEPO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DEWI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DEWA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 13,
+      "winrate": 0.0
+    },
+    "DFAM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DGIK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DEFI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DGNS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DGWG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DIGI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DILD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DKFT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DIVA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DKHH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DLTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DMMX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DMND.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DNAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DNET.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "DOOH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DOSS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DOID.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DPUM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DRMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DSFI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DSNG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DUCK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DSSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DPNS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DUTI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DVLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "DWGL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "DYAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EAST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ECII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EKAD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EDGE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 15,
+      "winrate": 0.0
+    },
+    "ELIT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ELSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ELTY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ELPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EMDE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ENAK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EMTK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ENVY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ENRG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "ENZO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EPAC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EPMT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ERAA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ERAL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ERTX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ESIP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ESSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ESTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ETWA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "ESTI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EURO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "EXCL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FAPA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FAST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FILM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FIMP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FITT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FISH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "FIRE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FLMC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FMII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FASW.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FOLK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FORE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FPNI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FORU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FUJI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FOOD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FUTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "FWCT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GAMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GDYR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GDST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GEMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GEMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "GHON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GGRM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GGRP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GIAA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GJTL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GLVA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GLOB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GMFI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GMTD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GOLD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 15,
+      "winrate": 0.0
+    },
+    "GOLF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GOLL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GOOD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GOTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "GPSO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GPRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GRIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GRPH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GRPM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GSMF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GTRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GTBO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "GTSI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "GULA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GUNA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GWSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "GZCO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HAIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HADE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HAJJ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HALO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HATM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HBAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HDIT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HDFA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HELI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HEAL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HEXA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HERO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HGII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HKMU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HILL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "HMSP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HOKI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HOME.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HITS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 12,
+      "winrate": 0.0
+    },
+    "HOMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HOTL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HOPE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "BAIK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "BAPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HRME.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "HRUM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "HRTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "HYGN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "HUMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "IATA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "IBFN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IBOS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ICON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IBST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "ICBP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IDEA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IDPR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IFSH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IIKP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IFII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IGAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IKAI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IKAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IKBI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IKPM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IMJS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IMPC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INCF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INAI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INCI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INCO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INDF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INAF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INDO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INDR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INDX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INDS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INDY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "INET.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INKP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INOV.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INPC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INPP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INPS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 11,
+      "winrate": 0.0
+    },
+    "INRU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INTD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IOTF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "INTP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IPAC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IPCC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IPCM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IPOL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IRRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IPTV.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IPPE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 10,
+      "winrate": 0.0
+    },
+    "IRSX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "ISAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "ISAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "ISEA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "ITIC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "ISSP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "ITMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "ITMG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "JAST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JARR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JATI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JAYA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JAWA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JECC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JGLE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JIHD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JKON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JPFA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JSKY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "JRPT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JSMR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JSPT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "JTPE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KAEF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KAQI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KARW.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KAYU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KBAG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KBLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KBLV.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KBLM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KBRI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KDSI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KDTN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KEEN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KETR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KEJU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KICI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KING.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KIAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KINO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KIOS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KKES.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KJEN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KLAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KLIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KKGI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "KLBF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KMTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KOBX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KOCI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KOIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KOKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KOPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "KONI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KOTA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KPIG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KRAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KREN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KRYA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KSIX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "KUAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LABA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LAJU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LABS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LAND.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LAPD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LCGP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LCKM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LEAD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 9,
+      "winrate": 0.0
+    },
+    "LIFE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LINK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LFLO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LION.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LIVE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LMPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LMAX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LOPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "LPCK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LPIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LPGI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LMSH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LPKR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LPLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LPPF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LPPS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LRNA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LSIP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LUCK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LTLS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "LUCY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MABA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MAHA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 8,
+      "winrate": 0.0
+    },
+    "MAGP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MAIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MANG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MAPA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MAPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MAPB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MARI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MARK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MASA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "KIJA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "KMDS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 7,
+      "winrate": 0.0
+    },
+    "MASB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MAXI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MAYA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MBAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "MBTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MBSS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "MBMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MCOL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "MCOR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDIY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MCAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDKI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MEDS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDRN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MDLN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MEDC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "MEGA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MENN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MEJA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "META.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MERK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MERI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MGNA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MGLV.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MHKI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MGRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MFMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MICE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MIDI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MIKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MINE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MINA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MIRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MITI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MKAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MKTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MKPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MLBI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MLIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MKNT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MLPL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MLPT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MMIX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MMLP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MNCN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MORA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MPIX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MOLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MPMX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MPOW.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MPPA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MPRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MPXL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MRAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MREI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MSIE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MSIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MSJA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MSKY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MTEL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MSTI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MTDL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MTLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MTFN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MTMH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MTRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MTPS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MTWI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MUTU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MYOH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "MTSM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "MYOR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NAIK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NANO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NASA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NASI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "MYTX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NATO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NAYZ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NCKL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NEST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NELY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NETV.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NICE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NFCX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NICK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NICL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NIKL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NIRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NISP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NINE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NOBU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NPGF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NRCA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "NSSS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NTBK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NUSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "NZIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OASA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OBAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OBMD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OILS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OCAP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "OKAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OLIV.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "OMRE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "OMED.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PACK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "OPMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PADA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PAMG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PALM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PADI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PANR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PANI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PANS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PART.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PBRX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PBID.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PBSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PDES.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PCAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PDPP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PEGE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PEHA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PEVE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PGAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PGEO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PGJO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PGUN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PGLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PICO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PIPA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PJAA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PKPK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PLAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PLAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PMJS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PLIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PMMP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PMUI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PNBN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PNBS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PNGO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PNLF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PNSE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PNIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POLI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POOL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POSA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POLY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PORT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POLU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POLL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "POWR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PPRE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PPGL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "PRAY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PPRI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PPRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PRDA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PRIM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PSAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "PSDN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PSAB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PSGO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PSKT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PSSI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PTDU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PTBA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PTIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PTMP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PTMR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PTPS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PTPP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PTPW.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PTRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PTSN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PTSP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PUDP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PURA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PURE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PURI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "PWON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RAFI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PYFA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "PZZA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RAAM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RAJA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "RANC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RALS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RCCC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RATU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RBMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RDTX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "REAL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RELI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RELF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RGAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RIGS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RICY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RIMO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RISE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RMKE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RMKO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "ROCK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RODA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RONY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "ROTI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RSCH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "RUIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "RUNS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "RSGK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SAFE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SAGE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SATU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SAME.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SAMF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SAPX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SBAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SBMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SCCO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SCNP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SCPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SDMU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SDPC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SCMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SDRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SEMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SFAN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SGER.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "SGRO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SHID.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SHIP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "SICO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 6,
+      "winrate": 0.0
+    },
+    "SIDO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SILO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SIMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SIMP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SINI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SIPD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SKBM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SKLT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SKRN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SKYB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SLIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMBR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMDM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMDR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SMGA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SMGR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SMIL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMKL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMKM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMCB.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SMLE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SMMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SMMT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SMRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SMRU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SMSM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SNLK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SOCI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SOFA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SOLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SOHO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SONA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SOTS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SOSS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SOUL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SPRE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SPMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SPTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SRAJ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SQMI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SRIL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SSIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SRSN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SRTG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SSMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SSTM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "STAA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "STAR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "STRK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "STTP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SUGI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "SULI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SURE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SUNI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SURI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "SUPR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SWID.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "SWAT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TALF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TAMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TAMU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 5,
+      "winrate": 0.0
+    },
+    "TAPG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TAXI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TAYS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TARA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TBIG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TBLA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TBMS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TCID.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TCPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TDPM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TEBE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TECH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TFCO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TFAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TGKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TELE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TGRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TIFA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TIRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TINS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TGUK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TKIM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TLDN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TLKM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TMPO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TMAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TIRT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TNCA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOBA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOOL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOSK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOTL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOTO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOPS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TOWR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TPIA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TPMA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TRAM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "TOYS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRGU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TRIL.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRIM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TRIN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRIO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TRJA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRIS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRUK.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TRST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TRUE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TRUS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "TSPC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TUGU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UANG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "TYRE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UCID.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "UDNG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UFOE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "ULTJ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "UNIC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UNIQ.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UNSP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "UNIT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UNTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "UNTD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "URBN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "UNVR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "UVCR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VERN.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "VAST.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VICI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VINS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "VICO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VISI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "VKTR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VIVA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "VOKS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VRNA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "VTNY.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WAPO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WEGE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WEHA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WGSH.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WIDI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WIFI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WIIM.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WINE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WICO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WIKA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WINR.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WINS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "WMPP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WIRG.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WMUU.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WOMF.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WOWS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 4,
+      "winrate": 0.0
+    },
+    "WSBP.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "WOOD.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WSKT.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "WTON.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "YELO.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "YOII.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "YPAS.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "YULE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "ZATA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "YUPI.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    },
+    "ZINC.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "ZONE.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "ZYRX.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 2,
+      "winrate": 0.0
+    },
+    "ZBRA.JK": {
+      "wins": 0,
+      "losses": 0,
+      "total": 3,
+      "winrate": 0.0
+    }
+  },
+  "last_signals": [
+    {
+      "ticker": "LOPI.JK",
+      "date": "2025-11-19 16:41:46",
+      "signal": "SELL",
+      "entry": 94.0,
+      "target": 107.884286,
+      "stop": 91.321429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LMPI.JK",
+      "date": "2025-11-19 16:41:42",
+      "signal": "SELL",
+      "entry": 150.0,
+      "target": 167.091429,
+      "stop": 147.857143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LMAX.JK",
+      "date": "2025-11-19 16:41:40",
+      "signal": "SELL",
+      "entry": 82.0,
+      "target": 93.396857,
+      "stop": 79.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LION.JK",
+      "date": "2025-11-19 16:41:39",
+      "signal": "SELL",
+      "entry": 446.0,
+      "target": 474.248,
+      "stop": 433.16,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LINK.JK",
+      "date": "2025-11-19 16:41:38",
+      "signal": "SELL",
+      "entry": 2790.0,
+      "target": 2931.428571,
+      "stop": 2725.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LIFE.JK",
+      "date": "2025-11-19 13:33:45",
+      "signal": "BUY",
+      "entry": 9975.0,
+      "target": 11596.284,
+      "stop": 9628.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LFLO.JK",
+      "date": "2025-11-19 13:33:44",
+      "signal": "BUY",
+      "entry": 700.0,
+      "target": 827.28,
+      "stop": 670.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LCKM.JK",
+      "date": "2025-11-19 13:33:43",
+      "signal": "BUY",
+      "entry": 248.0,
+      "target": 310.098857,
+      "stop": 230.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LEAD.JK",
+      "date": "2025-11-19 13:33:43",
+      "signal": "BUY",
+      "entry": 79.0,
+      "target": 91.684286,
+      "stop": 76.321429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LCGP.JK",
+      "date": "2025-11-19 13:33:42",
+      "signal": "SELL",
+      "entry": 114.0,
+      "target": 117.3,
+      "stop": 112.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LABS.JK",
+      "date": "2025-11-19 13:33:41",
+      "signal": "SELL",
+      "entry": 141.0,
+      "target": 141.29,
+      "stop": 139.392857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LAND.JK",
+      "date": "2025-11-19 13:33:41",
+      "signal": "SELL",
+      "entry": 32.0,
+      "target": 33.885714,
+      "stop": 31.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LAPD.JK",
+      "date": "2025-11-19 13:33:41",
+      "signal": "BUY",
+      "entry": 234.0,
+      "target": 266.466857,
+      "stop": 228.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LABA.JK",
+      "date": "2025-11-19 13:33:40",
+      "signal": "SELL",
+      "entry": 230.0,
+      "target": 250.271429,
+      "stop": 220.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "LAJU.JK",
+      "date": "2025-11-19 13:33:40",
+      "signal": "SELL",
+      "entry": 69.0,
+      "target": 73.478571,
+      "stop": 66.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KUAS.JK",
+      "date": "2025-11-19 13:33:39",
+      "signal": "SELL",
+      "entry": 68.0,
+      "target": 78.531429,
+      "stop": 65.857143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KRAS.JK",
+      "date": "2025-11-19 13:33:38",
+      "signal": "SELL",
+      "entry": 368.0,
+      "target": 402.414286,
+      "stop": 352.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KREN.JK",
+      "date": "2025-11-19 13:33:38",
+      "signal": "SELL",
+      "entry": 16.0,
+      "target": 16.707143,
+      "stop": 15.678571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KRYA.JK",
+      "date": "2025-11-19 13:33:38",
+      "signal": "BUY",
+      "entry": 192.0,
+      "target": 224.416286,
+      "stop": 184.821429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KSIX.JK",
+      "date": "2025-11-19 13:33:38",
+      "signal": "SELL",
+      "entry": 376.0,
+      "target": 425.936571,
+      "stop": 367.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KOTA.JK",
+      "date": "2025-11-19 13:33:37",
+      "signal": "BUY",
+      "entry": 36.0,
+      "target": 43.207714,
+      "stop": 34.178571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KPIG.JK",
+      "date": "2025-11-19 13:33:37",
+      "signal": "SELL",
+      "entry": 141.0,
+      "target": 143.28,
+      "stop": 137.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KOPI.JK",
+      "date": "2025-11-19 13:33:36",
+      "signal": "SELL",
+      "entry": 308.0,
+      "target": 323.085714,
+      "stop": 301.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KOCI.JK",
+      "date": "2025-11-19 13:33:35",
+      "signal": "BUY",
+      "entry": 91.0,
+      "target": 104.898857,
+      "stop": 88.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KOIN.JK",
+      "date": "2025-11-19 13:33:35",
+      "signal": "SELL",
+      "entry": 72.0,
+      "target": 77.185714,
+      "stop": 69.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KOKA.JK",
+      "date": "2025-11-19 13:33:35",
+      "signal": "SELL",
+      "entry": 306.0,
+      "target": 324.385714,
+      "stop": 297.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KONI.JK",
+      "date": "2025-11-19 13:33:35",
+      "signal": "SELL",
+      "entry": 2600.0,
+      "target": 2953.571429,
+      "stop": 2439.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KOBX.JK",
+      "date": "2025-11-19 13:33:34",
+      "signal": "SELL",
+      "entry": 180.0,
+      "target": 190.842857,
+      "stop": 175.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KMTR.JK",
+      "date": "2025-11-19 13:33:33",
+      "signal": "SELL",
+      "entry": 274.0,
+      "target": 274.62,
+      "stop": 271.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KMDS.JK",
+      "date": "2025-11-19 13:33:33",
+      "signal": "SELL",
+      "entry": 690.0,
+      "target": 691.525,
+      "stop": 672.321429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KLIN.JK",
+      "date": "2025-11-19 13:33:32",
+      "signal": "SELL",
+      "entry": 165.0,
+      "target": 167.16,
+      "stop": 162.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KKGI.JK",
+      "date": "2025-11-19 13:33:32",
+      "signal": "SELL",
+      "entry": 324.0,
+      "target": 324.37,
+      "stop": 319.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KLBF.JK",
+      "date": "2025-11-19 13:33:32",
+      "signal": "SELL",
+      "entry": 1230.0,
+      "target": 1292.464286,
+      "stop": 1201.607143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KLAS.JK",
+      "date": "2025-11-19 13:33:31",
+      "signal": "BUY",
+      "entry": 133.0,
+      "target": 152.28864,
+      "stop": 129.36,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KIOS.JK",
+      "date": "2025-11-19 13:33:30",
+      "signal": "BUY",
+      "entry": 81.0,
+      "target": 93.589714,
+      "stop": 78.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KKES.JK",
+      "date": "2025-11-19 13:33:30",
+      "signal": "SELL",
+      "entry": 28.0,
+      "target": 29.885714,
+      "stop": 27.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KIAS.JK",
+      "date": "2025-11-19 13:33:29",
+      "signal": "SELL",
+      "entry": 21.0,
+      "target": 22.934571,
+      "stop": 20.892857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KINO.JK",
+      "date": "2025-11-19 13:33:29",
+      "signal": "SELL",
+      "entry": 1280.0,
+      "target": 1356.607143,
+      "stop": 1245.178571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KJEN.JK",
+      "date": "2025-11-19 13:33:29",
+      "signal": "BUY",
+      "entry": 228.0,
+      "target": 271.04544,
+      "stop": 217.56,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KING.JK",
+      "date": "2025-11-19 13:33:28",
+      "signal": "SELL",
+      "entry": 206.0,
+      "target": 213.071429,
+      "stop": 202.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KEEN.JK",
+      "date": "2025-11-19 13:33:26",
+      "signal": "BUY",
+      "entry": 1095.0,
+      "target": 1246.242857,
+      "stop": 1068.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KETR.JK",
+      "date": "2025-11-19 13:33:26",
+      "signal": "SELL",
+      "entry": 494.0,
+      "target": 626.438571,
+      "stop": 454.892857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KICI.JK",
+      "date": "2025-11-19 13:33:26",
+      "signal": "SELL",
+      "entry": 248.0,
+      "target": 254.72,
+      "stop": 237.928571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KEJU.JK",
+      "date": "2025-11-19 13:33:25",
+      "signal": "SELL",
+      "entry": 715.0,
+      "target": 748.0,
+      "stop": 700.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KIJA.JK",
+      "date": "2025-11-19 13:33:25",
+      "signal": "SELL",
+      "entry": 186.0,
+      "target": 190.478571,
+      "stop": 183.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KBLI.JK",
+      "date": "2025-11-19 13:33:21",
+      "signal": "SELL",
+      "entry": 334.0,
+      "target": 344.842857,
+      "stop": 329.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KBLV.JK",
+      "date": "2025-11-19 13:33:21",
+      "signal": "SELL",
+      "entry": 218.0,
+      "target": 247.228571,
+      "stop": 204.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KDSI.JK",
+      "date": "2025-11-19 13:33:21",
+      "signal": "SELL",
+      "entry": 462.0,
+      "target": 487.928571,
+      "stop": 450.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KDTN.JK",
+      "date": "2025-11-19 13:33:21",
+      "signal": "BUY",
+      "entry": 356.0,
+      "target": 431.830286,
+      "stop": 336.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KBLM.JK",
+      "date": "2025-11-19 13:33:20",
+      "signal": "SELL",
+      "entry": 360.0,
+      "target": 368.485714,
+      "stop": 356.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KBRI.JK",
+      "date": "2025-11-19 13:33:20",
+      "signal": "SELL",
+      "entry": 50.0,
+      "target": 53.3,
+      "stop": 48.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KAYU.JK",
+      "date": "2025-11-19 13:33:18",
+      "signal": "SELL",
+      "entry": 18.0,
+      "target": 21.3,
+      "stop": 16.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KBAG.JK",
+      "date": "2025-11-19 13:33:18",
+      "signal": "SELL",
+      "entry": 41.0,
+      "target": 41.942857,
+      "stop": 40.571429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KAEF.JK",
+      "date": "2025-11-19 13:33:17",
+      "signal": "SELL",
+      "entry": 570.0,
+      "target": 577.1,
+      "stop": 558.75,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KAQI.JK",
+      "date": "2025-11-19 13:33:17",
+      "signal": "SELL",
+      "entry": 66.0,
+      "target": 66.665,
+      "stop": 63.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "KARW.JK",
+      "date": "2025-11-19 13:33:17",
+      "signal": "SELL",
+      "entry": 430.0,
+      "target": 437.8,
+      "stop": 424.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JTPE.JK",
+      "date": "2025-11-19 13:33:16",
+      "signal": "SELL",
+      "entry": 384.0,
+      "target": 423.375429,
+      "stop": 380.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JSMR.JK",
+      "date": "2025-11-19 13:33:15",
+      "signal": "BUY",
+      "entry": 3530.0,
+      "target": 3584.214286,
+      "stop": 3505.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JSPT.JK",
+      "date": "2025-11-19 13:33:15",
+      "signal": "SELL",
+      "entry": 3300.0,
+      "target": 3323.3,
+      "stop": 3244.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JPFA.JK",
+      "date": "2025-11-19 13:33:14",
+      "signal": "BUY",
+      "entry": 2430.0,
+      "target": 2562.0,
+      "stop": 2370.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JSKY.JK",
+      "date": "2025-11-19 13:33:14",
+      "signal": "SELL",
+      "entry": 52.0,
+      "target": 55.3,
+      "stop": 50.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JRPT.JK",
+      "date": "2025-11-19 13:33:14",
+      "signal": "SELL",
+      "entry": 890.0,
+      "target": 985.384286,
+      "stop": 879.821429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JMAS.JK",
+      "date": "2025-11-19 13:33:13",
+      "signal": "SELL",
+      "entry": 150.0,
+      "target": 158.25,
+      "stop": 146.25,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JIHD.JK",
+      "date": "2025-11-19 13:33:12",
+      "signal": "SELL",
+      "entry": 585.0,
+      "target": 629.785714,
+      "stop": 564.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JKON.JK",
+      "date": "2025-11-19 13:33:12",
+      "signal": "BUY",
+      "entry": 89.0,
+      "target": 102.738857,
+      "stop": 86.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JAYA.JK",
+      "date": "2025-11-19 13:33:11",
+      "signal": "BUY",
+      "entry": 111.0,
+      "target": 125.226,
+      "stop": 108.75,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JECC.JK",
+      "date": "2025-11-19 13:33:11",
+      "signal": "SELL",
+      "entry": 1190.0,
+      "target": 1263.071429,
+      "stop": 1156.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JGLE.JK",
+      "date": "2025-11-19 13:33:11",
+      "signal": "SELL",
+      "entry": 19.0,
+      "target": 20.178571,
+      "stop": 18.464286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JATI.JK",
+      "date": "2025-11-19 13:33:10",
+      "signal": "BUY",
+      "entry": 131.0,
+      "target": 168.973714,
+      "stop": 119.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JAST.JK",
+      "date": "2025-11-19 13:33:08",
+      "signal": "SELL",
+      "entry": 94.0,
+      "target": 102.25,
+      "stop": 90.25,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JAWA.JK",
+      "date": "2025-11-19 13:33:08",
+      "signal": "SELL",
+      "entry": 172.0,
+      "target": 194.67,
+      "stop": 168.25,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ITMA.JK",
+      "date": "2025-11-19 13:33:07",
+      "signal": "BUY",
+      "entry": 1495.0,
+      "target": 1636.428571,
+      "stop": 1430.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ITMG.JK",
+      "date": "2025-11-19 13:33:07",
+      "signal": "SELL",
+      "entry": 22175.0,
+      "target": 22138.75,
+      "stop": 22057.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "JARR.JK",
+      "date": "2025-11-19 13:33:07",
+      "signal": "SELL",
+      "entry": 3560.0,
+      "target": 3601.9,
+      "stop": 3505.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ITIC.JK",
+      "date": "2025-11-19 13:33:05",
+      "signal": "SELL",
+      "entry": 404.0,
+      "target": 430.871429,
+      "stop": 391.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ISSP.JK",
+      "date": "2025-11-19 13:33:05",
+      "signal": "BUY",
+      "entry": 440.0,
+      "target": 488.437714,
+      "stop": 434.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ISAT.JK",
+      "date": "2025-11-19 13:33:04",
+      "signal": "BUY",
+      "entry": 2130.0,
+      "target": 2397.137143,
+      "stop": 2089.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ISEA.JK",
+      "date": "2025-11-19 13:33:04",
+      "signal": "BUY",
+      "entry": 113.0,
+      "target": 135.786857,
+      "stop": 107.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IRSX.JK",
+      "date": "2025-11-19 13:33:03",
+      "signal": "SELL",
+      "entry": 266.0,
+      "target": 290.142,
+      "stop": 260.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ISAP.JK",
+      "date": "2025-11-19 13:33:03",
+      "signal": "BUY",
+      "entry": 32.0,
+      "target": 39.396857,
+      "stop": 29.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IRRA.JK",
+      "date": "2025-11-19 13:33:02",
+      "signal": "SELL",
+      "entry": 440.0,
+      "target": 443.77,
+      "stop": 436.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IPTV.JK",
+      "date": "2025-11-19 13:33:02",
+      "signal": "SELL",
+      "entry": 40.0,
+      "target": 42.121429,
+      "stop": 39.035714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IPPE.JK",
+      "date": "2025-11-19 13:33:02",
+      "signal": "SELL",
+      "entry": 14.0,
+      "target": 15.374571,
+      "stop": 13.892857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IPCC.JK",
+      "date": "2025-11-19 13:33:01",
+      "signal": "BUY",
+      "entry": 1190.0,
+      "target": 1318.294286,
+      "stop": 1176.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IPOL.JK",
+      "date": "2025-11-19 13:33:01",
+      "signal": "SELL",
+      "entry": 126.0,
+      "target": 126.365,
+      "stop": 122.464286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IPCM.JK",
+      "date": "2025-11-19 13:33:00",
+      "signal": "SELL",
+      "entry": 326.0,
+      "target": 333.071429,
+      "stop": 322.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IOTF.JK",
+      "date": "2025-11-19 13:32:59",
+      "signal": "SELL",
+      "entry": 89.0,
+      "target": 102.229714,
+      "stop": 86.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INTP.JK",
+      "date": "2025-11-19 13:32:59",
+      "signal": "BUY",
+      "entry": 6825.0,
+      "target": 7714.671429,
+      "stop": 6680.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IPAC.JK",
+      "date": "2025-11-19 13:32:58",
+      "signal": "SELL",
+      "entry": 218.0,
+      "target": 222.88,
+      "stop": 207.928571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INTD.JK",
+      "date": "2025-11-19 13:32:57",
+      "signal": "SELL",
+      "entry": 210.0,
+      "target": 216.91,
+      "stop": 202.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INTA.JK",
+      "date": "2025-11-19 13:32:57",
+      "signal": "SELL",
+      "entry": 42.0,
+      "target": 45.771429,
+      "stop": 40.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INPS.JK",
+      "date": "2025-11-19 13:32:56",
+      "signal": "SELL",
+      "entry": 154.0,
+      "target": 158.205,
+      "stop": 151.857143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INRU.JK",
+      "date": "2025-11-19 13:32:56",
+      "signal": "BUY",
+      "entry": 735.0,
+      "target": 859.988571,
+      "stop": 707.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INPC.JK",
+      "date": "2025-11-19 13:32:55",
+      "signal": "SELL",
+      "entry": 152.0,
+      "target": 152.235,
+      "stop": 149.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INPP.JK",
+      "date": "2025-11-19 13:32:55",
+      "signal": "SELL",
+      "entry": 675.0,
+      "target": 722.142857,
+      "stop": 653.571429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INKP.JK",
+      "date": "2025-11-19 13:32:54",
+      "signal": "SELL",
+      "entry": 7525.0,
+      "target": 7731.25,
+      "stop": 7431.25,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INOV.JK",
+      "date": "2025-11-19 13:32:54",
+      "signal": "BUY",
+      "entry": 142.0,
+      "target": 151.664286,
+      "stop": 137.607143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INDY.JK",
+      "date": "2025-11-19 13:32:53",
+      "signal": "SELL",
+      "entry": 1865.0,
+      "target": 1860.65,
+      "stop": 1817.321429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INET.JK",
+      "date": "2025-11-19 13:32:53",
+      "signal": "SELL",
+      "entry": 535.0,
+      "target": 647.298,
+      "stop": 505.75,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INDR.JK",
+      "date": "2025-11-19 13:32:52",
+      "signal": "BUY",
+      "entry": 2890.0,
+      "target": 2895.45,
+      "stop": 2823.571429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INDX.JK",
+      "date": "2025-11-19 13:32:52",
+      "signal": "SELL",
+      "entry": 170.0,
+      "target": 171.14,
+      "stop": 164.107143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INDS.JK",
+      "date": "2025-11-19 13:32:52",
+      "signal": "SELL",
+      "entry": 226.0,
+      "target": 231.657143,
+      "stop": 223.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INAF.JK",
+      "date": "2025-11-19 13:32:51",
+      "signal": "SELL",
+      "entry": 126.0,
+      "target": 126.471429,
+      "stop": 125.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INDO.JK",
+      "date": "2025-11-19 13:32:51",
+      "signal": "BUY",
+      "entry": 254.0,
+      "target": 297.740571,
+      "stop": 244.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INDF.JK",
+      "date": "2025-11-19 13:32:49",
+      "signal": "SELL",
+      "entry": 7025.0,
+      "target": 7039.625,
+      "stop": 6974.107143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INCF.JK",
+      "date": "2025-11-19 13:32:48",
+      "signal": "SELL",
+      "entry": 46.0,
+      "target": 48.121429,
+      "stop": 45.035714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INCI.JK",
+      "date": "2025-11-19 13:32:48",
+      "signal": "SELL",
+      "entry": 640.0,
+      "target": 665.928571,
+      "stop": 628.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INCO.JK",
+      "date": "2025-11-19 13:32:48",
+      "signal": "SELL",
+      "entry": 3900.0,
+      "target": 3930.25,
+      "stop": 3826.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "INAI.JK",
+      "date": "2025-11-19 13:32:47",
+      "signal": "SELL",
+      "entry": 150.0,
+      "target": 150.245,
+      "stop": 147.321429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IMPC.JK",
+      "date": "2025-11-19 13:32:46",
+      "signal": "SELL",
+      "entry": 2590.0,
+      "target": 2636.75,
+      "stop": 2494.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IKPM.JK",
+      "date": "2025-11-19 13:32:45",
+      "signal": "SELL",
+      "entry": 240.0,
+      "target": 270.401143,
+      "stop": 235.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IMAS.JK",
+      "date": "2025-11-19 13:32:45",
+      "signal": "BUY",
+      "entry": 1170.0,
+      "target": 1323.424286,
+      "stop": 1144.821429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IMJS.JK",
+      "date": "2025-11-19 13:32:45",
+      "signal": "BUY",
+      "entry": 276.0,
+      "target": 332.192571,
+      "stop": 261.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IKAI.JK",
+      "date": "2025-11-19 13:32:43",
+      "signal": "SELL",
+      "entry": 16.0,
+      "target": 17.414286,
+      "stop": 15.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IKAN.JK",
+      "date": "2025-11-19 13:32:43",
+      "signal": "SELL",
+      "entry": 112.0,
+      "target": 113.43,
+      "stop": 109.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IKBI.JK",
+      "date": "2025-11-19 13:32:43",
+      "signal": "SELL",
+      "entry": 545.0,
+      "target": 612.784286,
+      "stop": 534.821429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IFSH.JK",
+      "date": "2025-11-19 13:32:42",
+      "signal": "SELL",
+      "entry": 795.0,
+      "target": 800.975,
+      "stop": 784.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IIKP.JK",
+      "date": "2025-11-19 13:32:42",
+      "signal": "SELL",
+      "entry": 50.0,
+      "target": 53.3,
+      "stop": 48.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IGAR.JK",
+      "date": "2025-11-19 13:32:41",
+      "signal": "SELL",
+      "entry": 500.0,
+      "target": 502.828571,
+      "stop": 498.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IDPR.JK",
+      "date": "2025-11-19 13:32:40",
+      "signal": "SELL",
+      "entry": 312.0,
+      "target": 312.43,
+      "stop": 303.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IFII.JK",
+      "date": "2025-11-19 13:32:40",
+      "signal": "BUY",
+      "entry": 236.0,
+      "target": 264.044571,
+      "stop": 232.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ICBP.JK",
+      "date": "2025-11-19 13:32:39",
+      "signal": "BUY",
+      "entry": 8450.0,
+      "target": 8457.5,
+      "stop": 8337.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IDEA.JK",
+      "date": "2025-11-19 13:32:39",
+      "signal": "SELL",
+      "entry": 69.0,
+      "target": 73.95,
+      "stop": 66.75,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "ICON.JK",
+      "date": "2025-11-19 13:32:38",
+      "signal": "SELL",
+      "entry": 45.0,
+      "target": 45.77,
+      "stop": 44.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IBST.JK",
+      "date": "2025-11-19 13:32:38",
+      "signal": "BUY",
+      "entry": 5250.0,
+      "target": 5457.428571,
+      "stop": 5155.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IATA.JK",
+      "date": "2025-11-19 13:32:37",
+      "signal": "BUY",
+      "entry": 89.0,
+      "target": 99.9378,
+      "stop": 85.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IBFN.JK",
+      "date": "2025-11-19 13:32:37",
+      "signal": "SELL",
+      "entry": 61.0,
+      "target": 70.716857,
+      "stop": 58.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "IBOS.JK",
+      "date": "2025-11-19 13:32:37",
+      "signal": "BUY",
+      "entry": 55.0,
+      "target": 66.273429,
+      "stop": 52.107143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HYGN.JK",
+      "date": "2025-11-19 13:32:36",
+      "signal": "SELL",
+      "entry": 162.0,
+      "target": 163.18,
+      "stop": 160.178571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HRUM.JK",
+      "date": "2025-11-19 13:32:35",
+      "signal": "SELL",
+      "entry": 995.0,
+      "target": 995.0,
+      "stop": 980.535714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HUMI.JK",
+      "date": "2025-11-19 13:32:35",
+      "signal": "SELL",
+      "entry": 127.0,
+      "target": 133.6,
+      "stop": 124.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HITS.JK",
+      "date": "2025-11-19 13:32:34",
+      "signal": "SELL",
+      "entry": 116.0,
+      "target": 144.285714,
+      "stop": 103.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HRTA.JK",
+      "date": "2025-11-19 13:32:34",
+      "signal": "BUY",
+      "entry": 1360.0,
+      "target": 1455.464286,
+      "stop": 1316.607143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HOTL.JK",
+      "date": "2025-11-19 13:32:33",
+      "signal": "SELL",
+      "entry": 50.0,
+      "target": 53.3,
+      "stop": 48.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HRME.JK",
+      "date": "2025-11-19 13:32:33",
+      "signal": "SELL",
+      "entry": 38.0,
+      "target": 38.471429,
+      "stop": 37.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HOMI.JK",
+      "date": "2025-11-19 13:32:30",
+      "signal": "BUY",
+      "entry": 470.0,
+      "target": 548.331429,
+      "stop": 452.857143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HMSP.JK",
+      "date": "2025-11-19 13:32:29",
+      "signal": "SELL",
+      "entry": 815.0,
+      "target": 850.357143,
+      "stop": 798.928571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HOKI.JK",
+      "date": "2025-11-19 13:32:29",
+      "signal": "SELL",
+      "entry": 74.0,
+      "target": 74.625,
+      "stop": 72.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HOPE.JK",
+      "date": "2025-11-19 13:32:28",
+      "signal": "BUY",
+      "entry": 141.0,
+      "target": 175.700571,
+      "stop": 131.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HOME.JK",
+      "date": "2025-11-19 13:32:27",
+      "signal": "SELL",
+      "entry": 50.0,
+      "target": 53.3,
+      "stop": 48.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HKMU.JK",
+      "date": "2025-11-19 13:32:25",
+      "signal": "SELL",
+      "entry": 50.0,
+      "target": 53.3,
+      "stop": 48.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HILL.JK",
+      "date": "2025-11-19 13:32:25",
+      "signal": "SELL",
+      "entry": 156.0,
+      "target": 156.215,
+      "stop": 153.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HEXA.JK",
+      "date": "2025-11-19 13:32:24",
+      "signal": "SELL",
+      "entry": 4600.0,
+      "target": 4654.214286,
+      "stop": 4575.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HERO.JK",
+      "date": "2025-11-19 13:32:24",
+      "signal": "SELL",
+      "entry": 505.0,
+      "target": 512.425,
+      "stop": 490.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HELI.JK",
+      "date": "2025-11-19 13:32:23",
+      "signal": "SELL",
+      "entry": 246.0,
+      "target": 253.542857,
+      "stop": 242.571429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HGII.JK",
+      "date": "2025-11-19 13:32:23",
+      "signal": "BUY",
+      "entry": 160.0,
+      "target": 176.873143,
+      "stop": 158.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HEAL.JK",
+      "date": "2025-11-19 13:32:22",
+      "signal": "BUY",
+      "entry": 1450.0,
+      "target": 1484.178571,
+      "stop": 1434.464286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HALO.JK",
+      "date": "2025-11-19 13:32:19",
+      "signal": "SELL",
+      "entry": 111.0,
+      "target": 135.663429,
+      "stop": 104.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HBAT.JK",
+      "date": "2025-11-19 13:32:19",
+      "signal": "SELL",
+      "entry": 242.0,
+      "target": 256.96,
+      "stop": 235.2,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HDIT.JK",
+      "date": "2025-11-19 13:32:19",
+      "signal": "BUY",
+      "entry": 61.0,
+      "target": 69.444,
+      "stop": 59.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HAJJ.JK",
+      "date": "2025-11-19 13:32:18",
+      "signal": "SELL",
+      "entry": 116.0,
+      "target": 120.714286,
+      "stop": 113.857143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HATM.JK",
+      "date": "2025-11-19 13:32:18",
+      "signal": "BUY",
+      "entry": 356.0,
+      "target": 411.973714,
+      "stop": 344.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HDFA.JK",
+      "date": "2025-11-19 13:32:18",
+      "signal": "SELL",
+      "entry": 168.0,
+      "target": 182.614286,
+      "stop": 161.357143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HAIS.JK",
+      "date": "2025-11-19 13:32:16",
+      "signal": "SELL",
+      "entry": 212.0,
+      "target": 220.485714,
+      "stop": 208.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GWSA.JK",
+      "date": "2025-11-19 13:32:15",
+      "signal": "BUY",
+      "entry": 161.0,
+      "target": 187.117714,
+      "stop": 155.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GZCO.JK",
+      "date": "2025-11-19 13:32:15",
+      "signal": "BUY",
+      "entry": 296.0,
+      "target": 338.009143,
+      "stop": 288.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "HADE.JK",
+      "date": "2025-11-19 13:32:15",
+      "signal": "SELL",
+      "entry": 24.0,
+      "target": 24.942857,
+      "stop": 23.571429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GTSI.JK",
+      "date": "2025-11-19 13:32:14",
+      "signal": "SELL",
+      "entry": 119.0,
+      "target": 120.395,
+      "stop": 116.535714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GULA.JK",
+      "date": "2025-11-19 13:32:14",
+      "signal": "SELL",
+      "entry": 360.0,
+      "target": 370.14,
+      "stop": 349.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GTRA.JK",
+      "date": "2025-11-19 13:32:13",
+      "signal": "BUY",
+      "entry": 336.0,
+      "target": 392.410286,
+      "stop": 323.571429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GUNA.JK",
+      "date": "2025-11-19 13:32:13",
+      "signal": "SELL",
+      "entry": 282.0,
+      "target": 293.314286,
+      "stop": 276.857143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GTBO.JK",
+      "date": "2025-11-19 13:32:11",
+      "signal": "SELL",
+      "entry": 202.0,
+      "target": 202.98,
+      "stop": 199.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GRIA.JK",
+      "date": "2025-11-19 13:32:10",
+      "signal": "SELL",
+      "entry": 100.0,
+      "target": 114.873429,
+      "stop": 97.107143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GSMF.JK",
+      "date": "2025-11-19 13:32:10",
+      "signal": "BUY",
+      "entry": 108.0,
+      "target": 131.08608,
+      "stop": 101.92,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GPSO.JK",
+      "date": "2025-11-19 13:32:09",
+      "signal": "SELL",
+      "entry": 700.0,
+      "target": 746.25,
+      "stop": 676.428571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GRPH.JK",
+      "date": "2025-11-19 13:32:09",
+      "signal": "BUY",
+      "entry": 66.0,
+      "target": 76.116857,
+      "stop": 63.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GRPM.JK",
+      "date": "2025-11-19 13:32:09",
+      "signal": "BUY",
+      "entry": 62.0,
+      "target": 71.287714,
+      "stop": 60.178571,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GPRA.JK",
+      "date": "2025-11-19 13:32:07",
+      "signal": "SELL",
+      "entry": 135.0,
+      "target": 154.54368,
+      "stop": 131.32,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GOLD.JK",
+      "date": "2025-11-19 13:32:05",
+      "signal": "BUY",
+      "entry": 318.0,
+      "target": 358.205143,
+      "stop": 311.785714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GOOD.JK",
+      "date": "2025-11-19 13:32:05",
+      "signal": "SELL",
+      "entry": 372.0,
+      "target": 385.2,
+      "stop": 366.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GOTO.JK",
+      "date": "2025-11-19 13:32:05",
+      "signal": "SELL",
+      "entry": 61.0,
+      "target": 65.242857,
+      "stop": 59.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GMTD.JK",
+      "date": "2025-11-19 13:32:04",
+      "signal": "SELL",
+      "entry": 2360.0,
+      "target": 2437.75,
+      "stop": 2303.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GOLF.JK",
+      "date": "2025-11-19 13:32:04",
+      "signal": "SELL",
+      "entry": 202.0,
+      "target": 224.778857,
+      "stop": 199.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GOLL.JK",
+      "date": "2025-11-19 13:32:04",
+      "signal": "SELL",
+      "entry": 50.0,
+      "target": 53.3,
+      "stop": 48.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GJTL.JK",
+      "date": "2025-11-19 13:32:01",
+      "signal": "SELL",
+      "entry": 1040.0,
+      "target": 1065.928571,
+      "stop": 1028.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GMFI.JK",
+      "date": "2025-11-19 13:32:01",
+      "signal": "SELL",
+      "entry": 80.0,
+      "target": 80.235714,
+      "stop": 79.892857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GLVA.JK",
+      "date": "2025-11-19 13:32:00",
+      "signal": "SELL",
+      "entry": 408.0,
+      "target": 417.9,
+      "stop": 393.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GIAA.JK",
+      "date": "2025-11-19 13:31:59",
+      "signal": "SELL",
+      "entry": 108.0,
+      "target": 111.771429,
+      "stop": 106.285714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GLOB.JK",
+      "date": "2025-11-19 13:31:59",
+      "signal": "SELL",
+      "entry": 155.0,
+      "target": 176.819143,
+      "stop": 151.035714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GHON.JK",
+      "date": "2025-11-19 13:31:58",
+      "signal": "BUY",
+      "entry": 1710.0,
+      "target": 1900.26,
+      "stop": 1687.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GGRP.JK",
+      "date": "2025-11-19 13:31:58",
+      "signal": "SELL",
+      "entry": 210.0,
+      "target": 225.085714,
+      "stop": 203.142857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GEMS.JK",
+      "date": "2025-11-19 13:31:56",
+      "signal": "BUY",
+      "entry": 8950.0,
+      "target": 9061.964286,
+      "stop": 8899.107143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GGRM.JK",
+      "date": "2025-11-19 13:31:56",
+      "signal": "SELL",
+      "entry": 15225.0,
+      "target": 15843.75,
+      "stop": 14943.75,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GDYR.JK",
+      "date": "2025-11-19 13:31:55",
+      "signal": "SELL",
+      "entry": 1105.0,
+      "target": 1122.678571,
+      "stop": 1096.964286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GEMA.JK",
+      "date": "2025-11-19 13:31:55",
+      "signal": "BUY",
+      "entry": 95.0,
+      "target": 109.218857,
+      "stop": 92.214286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FWCT.JK",
+      "date": "2025-11-19 13:31:54",
+      "signal": "SELL",
+      "entry": 147.0,
+      "target": 156.428571,
+      "stop": 142.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GAMA.JK",
+      "date": "2025-11-19 13:31:54",
+      "signal": "SELL",
+      "entry": 18.0,
+      "target": 21.3,
+      "stop": 16.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "GDST.JK",
+      "date": "2025-11-19 13:31:54",
+      "signal": "SELL",
+      "entry": 117.0,
+      "target": 130.942286,
+      "stop": 115.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FUJI.JK",
+      "date": "2025-11-19 13:31:53",
+      "signal": "SELL",
+      "entry": 725.0,
+      "target": 868.281429,
+      "stop": 689.107143,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FUTR.JK",
+      "date": "2025-11-19 13:31:53",
+      "signal": "SELL",
+      "entry": 615.0,
+      "target": 616.9,
+      "stop": 585.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FPNI.JK",
+      "date": "2025-11-19 13:31:52",
+      "signal": "BUY",
+      "entry": 640.0,
+      "target": 756.54,
+      "stop": 612.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FORU.JK",
+      "date": "2025-11-19 13:31:52",
+      "signal": "SELL",
+      "entry": 1080.0,
+      "target": 1128.321429,
+      "stop": 1058.035714,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FORE.JK",
+      "date": "2025-11-19 13:31:51",
+      "signal": "SELL",
+      "entry": 510.0,
+      "target": 512.425,
+      "stop": 502.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FOOD.JK",
+      "date": "2025-11-19 13:31:51",
+      "signal": "BUY",
+      "entry": 402.0,
+      "target": 440.586,
+      "stop": 390.0,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FLMC.JK",
+      "date": "2025-11-19 13:31:50",
+      "signal": "SELL",
+      "entry": 224.0,
+      "target": 266.9,
+      "stop": 204.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FOLK.JK",
+      "date": "2025-11-19 13:31:50",
+      "signal": "BUY",
+      "entry": 322.0,
+      "target": 366.598286,
+      "stop": 314.071429,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FITT.JK",
+      "date": "2025-11-19 13:31:49",
+      "signal": "SELL",
+      "entry": 700.0,
+      "target": 711.425,
+      "stop": 665.714286,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FISH.JK",
+      "date": "2025-11-19 13:31:49",
+      "signal": "SELL",
+      "entry": 1515.0,
+      "target": 1537.275,
+      "stop": 1492.5,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FMII.JK",
+      "date": "2025-11-19 13:31:49",
+      "signal": "BUY",
+      "entry": 434.0,
+      "target": 531.344571,
+      "stop": 407.642857,
+      "result": "UNKNOWN"
+    },
+    {
+      "ticker": "FASW.JK",
+      "date": "2025-11-19 13:31:49",
+      "signal": "SELL",
+      "entry": 5312.49707,
+      "target": 5320.882422,
+      "stop": 5308.685547,
+      "result": "UNKNOWN"
+    }
+  ],
+  "accuracy_by_signal_type": {
+    "SELL": {
+      "wins": 0,
+      "total": 5781,
+      "winrate": 0.0
+    },
+    "BUY": {
+      "wins": 0,
+      "total": 1474,
+      "winrate": 0.0
+    }
+  }
+}

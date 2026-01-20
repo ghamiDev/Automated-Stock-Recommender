@@ -11,10 +11,45 @@ from dotenv import load_dotenv
 import numpy as np
 from analyzer_full_one_day import AutomatedStockAnalyzerDailyTP, render_daily_tp_page
 import textwrap
+import json
+from datetime import datetime
 
 
 load_dotenv()
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK ")
+
+# ---------------------------
+# Winrate calculation functions
+# ---------------------------
+def load_history():
+    path = "trade_history/signal_history.json"
+    if not os.path.exists(path):
+        return {}
+
+    try:
+        with open(path, "r") as f:
+            return json.load(f)
+    except Exception:
+        # Jika file rusak → reset
+        with open(path, "w") as f:
+            json.dump({}, f, indent=4)
+        return {}
+
+def calculate_winrate(data):
+    total = 0
+    wins = 0
+
+    for ticker, records in data.items():
+        for r in records:
+            total += 1
+            if r["result"] == "WIN":
+                wins += 1
+
+    if total == 0:
+        return 0, 0, 0
+
+    return (wins / total * 100), wins, total
+
 
 # ---------------------------
 # Page config
@@ -108,7 +143,7 @@ with st.sidebar:
     st.markdown("Configure your analysis below:")
 
     # ===== App page selector =====
-    app_page = st.selectbox("Menu", ["Dashboard","Simulator Investasi", "Analisa TP Harian"], index=0)
+    app_page = st.selectbox("Menu", ["Dashboard","Simulator Investasi", "Analisa TP Harian", "Winrate Mingguan"], index=0)
 
     # === Pilihan sektor saham ===
     st.markdown("### 📊 Pilih Sektor Saham")
@@ -300,6 +335,28 @@ if current_app_page == "Analisa TP Harian":
     st.stop()
 
 
+if current_app_page == "Winrate Mingguan":
+    st.title("📊 Winrate Mingguan — AI Tracker")
+
+    data = load_history()
+
+    winrate, wins, total = calculate_winrate(data)
+
+    st.metric("AI Total Winrate", f"{winrate:.2f}%")
+    st.write(f"Total WIN: {wins}")
+    st.write(f"Total Sinyal: {total}")
+
+    st.markdown("---")
+    st.subheader("🎯 Riwayat Sinyal")
+
+    for ticker, records in data.items():
+        st.markdown(f"### 📌 {ticker}")
+        st.dataframe(pd.DataFrame(records))
+
+    st.stop()
+
+
+
 # ---------------------------
 # App header
 # ---------------------------
@@ -323,14 +380,32 @@ if analysis_mode == "Single Analysis (Manual)":
 if analysis_mode == "All Analysis (Full Auto)":
     if st.button("🚀 Generate Recommendations"):
         with st.spinner("Analysing..."):
-            res_pack = analyzer.generate_recommendations(tickers=tickers, period=period_choice, interval=interval_choice, top_n=top_n, risk_percent=risk_percent)
+            res_pack = analyzer.generate_recommendations(
+                tickers=tickers,
+                period=period_choice,
+                interval=interval_choice,
+                top_n=top_n,
+                risk_percent=risk_percent,
+                capital=capital,
+                mode="deep"
+            )
+
             st.session_state["last_results"] = res_pack
             st.session_state["last_run"] = datetime.now().isoformat()
             st.rerun()
 elif analysis_mode == "Single Analysis (Manual)" and selected_tickers:
     if st.button("🔍 Analyze Selected Stock"):
         with st.spinner(f"Analysing {len(selected_tickers)} stock(s)..."):
-            res_pack = analyzer.generate_recommendations(tickers=selected_tickers, period=period_choice, interval=interval_choice, top_n=top_n, risk_percent=risk_percent)
+            res_pack = analyzer.generate_recommendations(
+                tickers=selected_tickers,
+                period=period_choice,
+                interval=interval_choice,
+                top_n=top_n,
+                risk_percent=risk_percent,
+                capital=capital,
+                mode="deep"
+            )
+
             st.session_state["last_results"] = res_pack
             st.session_state["last_run"] = datetime.now().isoformat()
             st.rerun()
@@ -362,13 +437,48 @@ def render_html(html: str):
 # ---------------------------
 # Top Recommendations
 # ---------------------------
+
+# Fungsi get_quick_prediction yang lebih baik:
+def get_quick_prediction(ticker: str, analyzer: AutomatedStockAnalyzer) -> str:
+    """Prediksi cepat untuk tampilan tabel"""
+    try:
+        pred = analyzer.predict_price_direction(ticker, forecast_days=5)
+        if "error" in pred:
+            return "N/A"
+        
+        up_days = pred["up_days"]
+        down_days = pred["down_days"]
+        direction = pred["net_direction"]
+        
+        if direction == "UP":
+            return f"📈 {up_days}/{down_days}H"
+        elif direction == "DOWN":
+            return f"📉 {up_days}/{down_days}H"
+        else:
+            return f"↔️ {up_days}/{down_days}H"
+    except Exception as e:
+        return "N/A"
+    
 st.subheader("Top Recommendations Today")
 
 if not ranked:
     st.warning("Tidak ada rekomendasi teratas.")
 else:
     rows = []
-    for i, (ticker, score) in enumerate(ranked, start=1):
+    for i, item in enumerate(ranked, start=1):
+        if isinstance(item, dict):
+            ticker = item.get("ticker")
+            score = item.get("score")
+            projects = item.get("projects")
+        elif isinstance(item, (list, tuple)):
+            if len(item) == 3:
+                ticker, score, projects = item
+            elif len(item) == 2:
+                ticker, score = item
+                projects = 0  # default
+            else:
+                st.error(f"Struktur data tidak dikenali: {item}")
+                continue
         analysis = res_pack["results"].get(ticker)
         if analysis:
             fm = analysis["fundamental_metrics"]
@@ -389,24 +499,41 @@ else:
                 "Change%": round(float(change_pct), 2) if change_pct else None,
                 "Signal": analysis["technical_score"]["signal"],
                 "Score": round(analysis["technical_score"]["score"], 1),
+                "Prediksi 5H": f"{get_quick_prediction(ticker, analyzer)}",
                 "Trend": "⬆️" if analysis["technical_score"]["components"]["ma_trend_score"] > 50 else "↔️" if 40 <= analysis["technical_score"]["components"]["ma_trend_score"] <= 60 else "⬇️",
+                "Demand": analysis["demand_analysis"].get("demand_score", 0),  # Perhatikan key yang benar
+                "Projects": projects,  # Gunakan nilai projects dari tuple
             })
     top_df = pd.DataFrame(rows).reset_index(drop=True)
 
+   
     def color_signal(v):
         if "BUY" in v: return "background-color:#16a34a;color:white"
         if "HOLD" in v: return "background-color:#f59e0b;color:white"
         if "SELL" in v: return "background-color:#dc2626;color:black"
         return ""
 
-    st.dataframe(top_df.style.applymap(color_signal, subset=["Signal"]), width="stretch", hide_index=True)
-
+    st.dataframe(top_df.style.map(color_signal, subset=["Signal"]), width="stretch", hide_index=True)
 
 # ---------------------------
 # Detail Panels
 # ---------------------------
 st.subheader("Details (expand a row to view full analysis)")
-for ticker, score in ranked:
+# PERBAIKAN: unpack 3 nilai
+for item in ranked:
+    # HANDLE BERBAGAI STRUKTUR DATA
+    if isinstance(item, dict):
+        ticker = item.get("ticker")
+    elif isinstance(item, (list, tuple)):
+        ticker = item[0] if len(item) > 0 else None
+    elif isinstance(item, str):
+        ticker = item
+    else:
+        continue
+    
+    if not ticker:
+        continue
+        
     analysis = res_pack["results"].get(ticker)
     if not analysis:
         continue
@@ -435,35 +562,10 @@ for ticker, score in ranked:
     expander_label = f"{signal_emoji} {ticker} ({company_name}) — Score: {analysis['technical_score']['score']} — Signal: {signal_text} {emoji_trend} {trend_text}"
 
     with st.expander(expander_label, expanded=False):
-        cols = st.columns([2, 2, 1])
+        cols = st.columns([4, 2])
         df = analysis["price_data"].copy().tail(120)
 
         with cols[0]:
-            st.markdown("**Candlestick (mini)**")
-            if not df.empty:
-                fig = go.Figure(data=[go.Candlestick(
-                    x=df.index, open=df["Open"], high=df["High"], low=df["Low"], close=df["Close"], name="Price"
-                )])
-
-                support = analysis.get("support")
-                resistance = analysis.get("resistance")
-                if support:
-                    fig.add_hline(y=support, line_dash="dot", line_color="green",
-                                  annotation_text=f"Support {support}", annotation_position="bottom right")
-                if resistance:
-                    fig.add_hline(y=resistance, line_dash="dot", line_color="red",
-                                  annotation_text=f"Resistance {resistance}", annotation_position="top right")
-
-                for ma in ["MA_5", "MA_20", "MA_50", "EMA_8", "EMA_21"]:
-                    if ma in df.columns:
-                        fig.add_trace(go.Scatter(x=df.index, y=df[ma], name=ma, line=dict(width=1)))
-
-                fig.update_layout(template="plotly_dark", height=360, margin=dict(l=10, r=10, t=30, b=10), showlegend=True)
-                st.plotly_chart(fig, config={"displaylogo": False, "responsive": True}, use_container_width=True)
-            else:
-                st.write("No price data to show.")
-
-        with cols[1]:
             st.markdown("**Indicators Summary**")
             ta = analysis["price_data"].iloc[-1].to_dict()
             fm = analysis["fundamental_metrics"]
@@ -482,7 +584,50 @@ for ticker, score in ranked:
                         "P/B": fm.get("pb_ratio"), "ROE": fm.get("roe"), "DER": fm.get("der")}
             st.dataframe(pd.DataFrame(list(fm_quick.items()), columns=["Metric", "Value"]), width="stretch")
 
-        with cols[2]:
+            # Backtesting section dengan error handling
+            st.markdown("⚡ **Backtesting (60m candles)**")
+            try:
+                res = analyzer.backtest_daily_tp(
+                    ticker=ticker,
+                    period="6mo",
+                    interval="60m",
+                    tp_pct=0.0075,
+                    sl_pct=0.004,
+                    horizon_candles=12
+                )
+                
+                if isinstance(res, dict) and 'summary' in res:
+                    summary = res['summary']
+                    
+                    # Tampilkan metrics yang lebih jelas
+                    col_bt1, col_bt2, col_bt3 = st.columns(3)
+                    
+                    with col_bt1:
+                        st.metric("Total Trades", summary.get('total_trades', 0))
+                    
+                    with col_bt2:
+                        winrate = summary.get('winrate_pct', 0)
+                        winrate_color = "normal" if winrate >= 50 else "inverse"
+                        st.metric("Winrate", f"{winrate:.1f}%", delta_color=winrate_color)
+                    
+                    with col_bt3:
+                        avg_pnl = summary.get('avg_pnl_pct', 0)
+                        pnl_color = "normal" if avg_pnl > 0 else "inverse"
+                        st.metric("Avg PnL", f"{avg_pnl:.3f}%", delta_color=pnl_color)
+                    
+                    # Info tambahan
+                    if 'trades' in res and len(res['trades']) > 0:
+                        st.caption(f"Sample trade terakhir: Entry {res['trades'][-1].get('entry_price', 'N/A')} → {res['trades'][-1].get('result', 'N/A')}")
+                        
+                elif isinstance(res, dict) and 'error' in res:
+                    st.warning(f"⚠️ {res['error']}")
+                else:
+                    st.info("Data backtesting tersedia")
+                    
+            except Exception as e:
+                st.error(f"Backtesting error: {str(e)}")
+            
+        with cols[1]:
             st.markdown("**3-Day Plan**")
             plan = analysis["3day_plan"]
             st.write(f"Action: **{plan['action']}**")
@@ -502,6 +647,7 @@ for ticker, score in ranked:
                 st.info("⏸ Tidak ada sinyal timing signifikan saat ini.")
 
             st.markdown("---")
+
             if st.button(f"➕ Add {ticker} to Watchlist", key=f"wl_{ticker}"):
                 if ticker not in st.session_state["watchlist"]:
                     st.session_state["watchlist"].append(ticker)
@@ -510,6 +656,62 @@ for ticker, score in ranked:
                 else:
                     st.info(f"{ticker} is already in watchlist")
 
+
+        st.markdown("---")
+        st.markdown("🎯 **Prediksi 5 Hari Mendatang**")
+
+        # Button untuk trigger prediksi
+        if st.button(f"🔮 Tampilkan Prediksi Detail", key=f"pred_detail_{ticker}"):
+            with st.spinner(f"Menghitung prediksi untuk {ticker}..."):
+                pred = analyzer.predict_price_direction(ticker, forecast_days=5)
+            
+            if "error" in pred:
+                st.error(f"Prediksi gagal: {pred['error']}")
+            else:
+                # Tampilkan dalam format bagus
+                col_pred1, col_pred2, col_pred3 = st.columns(3)
+                
+                with col_pred1:
+                    st.metric(
+                        "Hari Naik", 
+                        f"{pred['up_days']} hari", 
+                        f"{pred['up_probability']*100:.0f}% prob"
+                    )
+                
+                with col_pred2:
+                    st.metric(
+                        "Hari Turun", 
+                        f"{pred['down_days']} hari", 
+                        f"{pred['down_probability']*100:.0f}% prob"
+                    )
+                
+                with col_pred3:
+                    direction_emoji = "📈" if pred['net_direction'] == "UP" else "📉" if pred['net_direction'] == "DOWN" else "↔️"
+                    st.metric(
+                        "Arah Net", 
+                        f"{direction_emoji} {pred['net_direction']}",
+                        f"{pred['confidence']*100:.0f}% confidence"
+                    )
+                
+                # Persentase pergerakan
+                st.markdown("**📊 Estimasi Persentase:**")
+                col_pct1, col_pct2 = st.columns(2)
+                
+                with col_pct1:
+                    st.info(f"**Rata2 Naik:** {pred['expected_up_pct']}% per hari")
+                
+                with col_pct2:
+                    st.info(f"**Rata2 Turun:** {pred['expected_down_pct']}% per hari")
+                
+                # Interpretasi
+                if pred['net_direction'] == "UP":
+                    st.success(f"**AI Prediksi:** {ticker} cenderung naik {pred['up_days']} dari 5 hari ke depan")
+                elif pred['net_direction'] == "DOWN":
+                    st.warning(f"**AI Prediksi:** {ticker} cenderung turun {pred['down_days']} dari 5 hari ke depan")
+                else:
+                    st.info(f"**AI Prediksi:** {ticker} cenderung sideway")    
+
+        st.markdown("---")
         st.markdown("**AI Summary (templated)**")
         score_val = analysis["technical_score"]["score"]
         sig = analysis["technical_score"]["signal"]
@@ -523,22 +725,41 @@ for ticker, score in ranked:
         )
         st.info(summary)
 
-# ============================================================
-# 📋 AI Kesimpulan Rekomendasi Jangka Pendek (1–3 Hari)
+## ============================================================
+# 🤖 AI Kesimpulan Rekomendasi Jangka Pendek (1–3 Hari)
 # ============================================================
 if ranked:
     st.markdown("### 🤖 Kesimpulan AI Rekomendasi Jangka Pendek (1–3 Hari)")
 
     top5 = ranked[:5]
-    total_market_strength = 0
     composite_results = []
     macro = res_pack.get("macro", {})
     market_sentiment = macro.get("market_sentiment", "Neutral")
 
-    for ticker, score in top5:
+    # =======================
+    # SCORING PER SAHAM
+    # =======================
+    for item in top5:
+        # HANDLE BERBAGAI STRUKTUR DATA
+        if isinstance(item, dict):
+            ticker = item.get("ticker")
+            score = item.get("score", 0)
+        elif isinstance(item, (list, tuple)):
+            ticker = item[0] if len(item) > 0 else None
+            score = item[1] if len(item) > 1 else 0
+        elif isinstance(item, str):
+            ticker = item
+            score = 0
+        else:
+            continue
+        
+        if not ticker:
+            continue
+
         analysis = res_pack["results"].get(ticker)
         if not analysis:
             continue
+
         df = analysis["price_data"]
         last = df.iloc[-1]
         fm = analysis["fundamental_metrics"]
@@ -568,12 +789,9 @@ if ranked:
 
         # ----- MACRO CONTEXT -----
         macro_adj = 0
-        if market_sentiment == "Risk-on":
-            macro_adj = 10
-        elif market_sentiment == "Risk-off":
-            macro_adj = -10
+        if market_sentiment == "Risk-on": macro_adj = 10
+        elif market_sentiment == "Risk-off": macro_adj = -10
 
-        # ----- RECOMMENDER -----
         recomm_score = ts["score"]
 
         # Final composite weighted score
@@ -597,54 +815,203 @@ if ranked:
             "trend": "Uptrend" if ma_trend > 60 else "Sideway" if 40 <= ma_trend <= 60 else "Downtrend",
             "plan": plan,
         })
-        total_market_strength += final
 
-    avg_market_strength = total_market_strength / len(composite_results)
-    best_pick = max(composite_results, key=lambda x: x["final_score"])
+    # ============================================================
+    # ROBUST FILTER → Paling penting!
+    # ============================================================
+    robust_filtered = []
 
-    # ----- Interpretasi Kesimpulan -----
+    for r in composite_results:
+
+        # Composite score minimal
+        if r["final_score"] < 70:
+            continue
+
+        # Trend harus cocok dengan sinyal
+        if r["signal"] == "BUY" and r["trend"] != "Uptrend":
+            continue
+        if r["signal"] == "SELL" and r["trend"] != "Downtrend":
+            continue
+
+        # Hindari noise RSI/ti score ekstrem
+        if not (35 <= r["ti_score"] <= 85):
+            continue
+
+        # Entry–Stop–Target harus valid
+        entry = r["plan"]["entry"]
+        tgt   = r["plan"]["target"]
+        sl    = r["plan"]["stop"]
+        rr = abs(tgt - entry) / max(abs(entry - sl), 1e-6)
+
+        if rr < 1:   # minimal R:R 1:1
+            continue
+
+        robust_filtered.append(r)
+
+    # ============================================================
+    # Jika tidak ada saham layak → tampilkan warning, stop!
+    # ============================================================
+    if not robust_filtered:
+        st.markdown("""
+        ### ⚠️ Tidak Ada Rekomendasi Layak Hari Ini
+        AI tidak menemukan saham dengan probabilitas yang cukup kuat dan robust
+        untuk trading jangka pendek (1–3 hari).
+
+        Biasanya disebabkan:
+        - Trend tidak valid
+        - Volume rendah
+        - Sinyal berlawanan arah trend
+        - Market sedang risk-off / bearish
+        """)
+        st.stop()
+
+    # =======================
+    # Market Strength
+    # =======================
+    avg_market_strength = sum(r["final_score"] for r in robust_filtered) / len(robust_filtered)
+
     if avg_market_strength >= 80:
         market_view = "📈 Momentum pasar sangat kuat — peluang kenaikan tinggi dalam 1–3 hari."
         color = "#16a34a"
     elif avg_market_strength >= 60:
-        market_view = "⚖️ Pasar dalam fase konsolidasi dengan bias positif — tetap waspada terhadap volatilitas."
+        market_view = "⚖️ Pasar konsolidasi dengan bias positif."
         color = "#facc15"
     else:
-        market_view = "📉 Tekanan jual meningkat — potensi koreksi jangka pendek lebih besar."
+        market_view = "📉 Tekanan jual tinggi — potensi koreksi jangka pendek."
         color = "#dc2626"
 
-    # ----- Render HTML -----
-    cards_html = ""
-    for i, r in enumerate(composite_results, start=1):
-        c = "#16a34a" if "BUY" in r["signal"] else "#dc2626" if "SELL" in r["signal"] else "#facc15"
-        emoji = "🟢" if "BUY" in r["signal"] else "🔴" if "SELL" in r["signal"] else "⚖️"
-        p = r["plan"]
+    best_pick = max(robust_filtered, key=lambda x: x["final_score"])
 
-    best = best_pick
+    # =======================
+    # RENDER BOX HTML
+    # =======================
     html_kete = f"""
     <div style='background:linear-gradient(90deg,#0F172A,#1E293B);border:1px solid #334155;border-radius:14px;padding:1.2rem;margin-bottom:1rem;'>
+
     <h4 style='color:{color};margin-top:0'>{market_view}</h4>
+
     <p style='color:#CBD5E1'>
         📊 <b>Rata-rata kekuatan pasar:</b> {avg_market_strength:.2f}/100<br>
         🌍 <b>Sentimen makro:</b> {market_sentiment}<br>
-        💹 <b>Analisis dari:</b> Technical, Deep Technical, Fundamental, Macro, dan Scoring Engine
+        🔎 <b>Saham dianalisa:</b> {len(robust_filtered)} yang lolos robust filter
     </p>
+
     <div style='background-color:#0F172A;padding:1rem;margin-top:1rem;border-radius:12px;border:1px solid {color};'>
-    <h4 style='color:{color};margin-bottom:0.4rem;'>🔥 Saham Paling Legit untuk Trading Harian</h4>
+    <h4 style='color:{color};margin-bottom:0.4rem;'>🔥 Saham Paling Kuat untuk Trading Harian</h4>
     <p style='font-size:1.05rem;margin:0;'>
-        <b>{best['ticker']}</b> — {best['signal']} ({best['trend']})<br>
-        Entry: <code>{best['plan']['entry']}</code> | 🎯 Target: <code>{best['plan']['target']}</code> | 🛑 Stop: <code>{best['plan']['stop']}</code><br>
-        Total Composite Score: <b>{best['final_score']:.2f}</b> / 100
+        <b>{best_pick['ticker']}</b> — {best_pick['signal']} ({best_pick['trend']})<br>
+        Entry: <code>{best_pick['plan']['entry']}</code> | 🎯 Target: <code>{best_pick['plan']['target']}</code> | 🛑 Stop: <code>{best_pick['plan']['stop']}</code><br>
+        Composite Score: <b>{best_pick['final_score']:.2f}</b> / 100
     </p>
     </div>
-    <hr style='border:1px solid #1F2937;margin:1rem 0;'>
-    <p style='color:#94a3b8;margin-top:1rem;'>
-    💡 Kesimpulan AI di atas merupakan hasil integrasi seluruh indikator teknikal, fundamental, makro, dan sistem scoring internal
-    untuk memberikan pandangan pasar jangka pendek (1–3 hari).
+
+    <p style='color:#94a3b8;margin-top:1rem;font-size:0.9rem;'>
+    ⚠️ Rekomendasi hanya muncul jika sinyal betul-betul robust berdasarkan Technical + Deep Technical + Fundamental + Macro + Trend.
     </p>
+
     </div>
     """
+
+    # ============================================================
+    # 🔮 AI Prediksi 1–3 Hari (Hybrid Model)
+    # ============================================================
+    st.markdown("""
+    <br>
+    <h2 style='margin-bottom:0.2rem;'>🔮 Prediksi AI 1–3 Hari (Hybrid Model)</h2>
+    <p style='color:#94a3b8;margin-top:-0.4rem;'>ARIMA + ML + ATR + Sentimen Makro</p>
+    """, unsafe_allow_html=True)
+
+    selected_ticker = st.session_state.get("selected_ticker", None)
+
+    if selected_ticker:
+        with st.spinner(f"🔄 Menghitung prediksi hybrid untuk {selected_ticker} ..."):
+            pred = analyzer.predict_3days(selected_ticker)
+
+        if "error" in pred:
+            st.error(f"Hybrid predictor gagal: {pred['error']}")
+        else:
+
+            # ---- CARD WRAPPER ----
+            st.markdown("""
+            <div style='background:#0f172a;padding:1.5rem;border-radius:14px;border:1px solid #1e293b;margin-top:1rem;'>
+            """, unsafe_allow_html=True)
+
+            # ---- SIGNAL BESAR ----
+            sig_color = {
+                "BUY": "#22c55e",
+                "SELL": "#ef4444",
+                "HOLD": "#facc15"
+            }.get(pred["final_signal"], "#f1f5f9")
+
+            st.markdown(
+                f"""
+                <h3 style='color:{sig_color};text-align:center;margin-top:0;font-size:1.9rem;'>
+                    {pred['final_signal']}
+                </h3>
+                <p style='color:#94a3b8;text-align:center;margin-top:-0.6rem;'>
+                    Macro Bias: <b>{pred['macro_bias']}</b>
+                </p>
+                """,
+                unsafe_allow_html=True
+            )
+
+            # ---- METRICS 3 KOLOM ----
+            c1, c2, c3 = st.columns(3)
+            c1.metric("Expected Return (3D)", f"{pred['expected_return_pct']} %")
+            c2.metric("Confidence", f"{pred['confidence'] * 100:.1f} %")
+            c3.metric("Volatility (ATR)", pred["volatility_index"])
+
+            st.markdown("<br>", unsafe_allow_html=True)
+
+            # ---- CHART PLOTLY ----
+            import plotly.graph_objects as go
+
+            future_x = ["+1 Hari", "+2 Hari", "+3 Hari"]
+
+            fig = go.Figure()
+
+            fig.add_trace(go.Scatter(
+                x=future_x,
+                y=pred["predicted_prices"],
+                mode="lines+markers",
+                name="Prediksi",
+                line=dict(width=3)
+            ))
+            fig.add_trace(go.Scatter(
+                x=future_x,
+                y=pred["ci_upper"],
+                mode="lines",
+                name="Confidence Upper",
+                line=dict(dash="dash")
+            ))
+            fig.add_trace(go.Scatter(
+                x=future_x,
+                y=pred["ci_lower"],
+                mode="lines",
+                name="Confidence Lower",
+                line=dict(dash="dash")
+            ))
+
+            fig.update_layout(
+                title=f"Prediksi Harga {selected_ticker} (3 Hari ke Depan)",
+                yaxis_title="Harga",
+                xaxis_title="Hari Prediksi",
+                template="plotly_dark",
+                height=350,
+                margin=dict(l=20, r=20, t=50, b=20)
+            )
+
+            st.plotly_chart(fig, use_container_width=True)
+
+            # ---- TUTUP CARD WRAPPER ----
+            st.markdown("</div>", unsafe_allow_html=True)
+
+    else:
+        st.info("Pilih ticker terlebih dahulu untuk mendapatkan prediksi hybrid 1–3 hari.")
+        
     render_html(html_kete)
+
+
 
 # ---------------------------
 # Watchlist panel
